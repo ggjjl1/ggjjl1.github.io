@@ -48,3 +48,5 @@ remoteip 192.168.1.1-254  #自动分配给客户端ip地址范围
 配置pptp client  地址 http://pptpclient.sourceforge.net/
 
 
+## 参考链接
+1. http://www.cnblogs.com/sixiweb/archive/2012/11/20/2778732.html
