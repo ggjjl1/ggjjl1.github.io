@@ -1,6 +1,6 @@
 ---
 title: 使用 Spark SQL 读取 Hive 上的数据
-tags: SparkSQL
+tags: [Spark, SparkSQL]
 date: 2016-04-20 16:18:20
 ---
 
