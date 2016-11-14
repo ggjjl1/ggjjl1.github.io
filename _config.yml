@@ -4,11 +4,14 @@
 
 # Site
 title: ggjjl1's blog
-subtitle:
+subtitle: 个人博客
 description: ggjjl1's blog
 author: ggjjl1
 language: zh-CN
 timezone:
+
+# 自定义添加的代码
+duoshuo_shortname: ggjjl1
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
