@@ -4,11 +4,11 @@
 
 # Site
 title: ggjjl1's blog
-subtitle: 个人博客
+subtitle: 你在或者不在，我都在那里，不悲不喜。
 description: ggjjl1's blog
 author: ggjjl1
 language: zh-CN
-timezone:
+timezone: Asia/Shanghai
 
 # 自定义添加的代码
 duoshuo_shortname: ggjjl1
