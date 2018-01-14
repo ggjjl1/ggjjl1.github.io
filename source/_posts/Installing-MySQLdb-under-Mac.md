@@ -1,9 +1,9 @@
 ---
 title: Mac 下安装 MySQLdb
 date: 2016-03-06 00:13:12
-fags: 
+tags: [MySQL,编译]
 ---
-<!--markdown-->环境
+环境
 系统版本: Mac OS X EI Caption (version 10.11.1)
 Python 版本: 2.7.10
 virtualenv (14.0.6)
@@ -24,7 +24,7 @@ sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.
 
 
 
-参考文章
-http://blog.csdn.net/janronehoo/article/details/25207825
-http://stackoverflow.com/questions/10557507/rails-mysql-on-osx-library-not-loaded-libmysqlclient-18-dylib
+参考文章：
+[http://blog.csdn.net/janronehoo/article/details/25207825](http://blog.csdn.net/janronehoo/article/details/25207825)
+[http://stackoverflow.com/questions/10557507/rails-mysql-on-osx-library-not-loaded-libmysqlclient-18-dylib](http://stackoverflow.com/questions/10557507/rails-mysql-on-osx-library-not-loaded-libmysqlclient-18-dylib)
 

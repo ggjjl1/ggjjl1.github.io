@@ -1,11 +1,11 @@
 ---
 title: 在 Mac 上配置 Hadoop-2.6.2 和 Hive-1.2.1 遇到问题
 date: 2015-11-25 12:08:27
-fags: 
+tags: [Mac OSX]
 ---
-<!--markdown-->问题描述：
+问题描述：
 在 Mac 上安装配置完 Hadoop-2.6.2 后，再安装 Hive-1.2.1 并启动，出现以下错误信息。
-
+```
     gjl: ~/bin/apache-hive-1.2.1-bin $bin/hive
     
     Logging initialized using configuration in jar:file:/Users/gaojunliang/bin/apache-hive-1.2.1-bin/lib/hive-common-1.2.1.jar!/hive-log4j.properties
@@ -41,7 +41,7 @@ fags:
         at java.lang.reflect.Method.invoke(Method.java:606)
         at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
         at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
-
+```
 解决办法：
 将 Hive 中的 jline 从 2.x 版本降级到 1.x 之后，将 Hadoop 中 share/hadoop/yarn/lib 目录下的 jline 升级到 2.x 版本。
 

@@ -1,10 +1,10 @@
 ---
 title: 在 Linux 上挂载硬盘
 date: 2015-11-26 14:21:00
-fags: 
+tags: [Linux]
 ---
-<!--markdown-->1.先执行如下命令 `df -h` 查看当前系统磁盘信息。
-
+1.先执行如下命令 `df -h` 查看当前系统磁盘信息。
+```
     root@host01:/opt/hadoop-2.6.2/etc/hadoop# df -h
     Filesystem      Size  Used Avail Use% Mounted on
     /dev/vda1        25G  4.4G   19G  19% /
@@ -15,10 +15,10 @@ fags:
     none            7.9G     0  7.9G   0% /run/shm
     none            100M     0  100M   0% /run/user
     /dev/vdc1        50G   52M   47G   1% /data
-
+```
 
 2.执行 `fdisk -l` 查看系统中是否存在未挂载磁盘。
-
+```
     root@host01:/opt/hadoop-2.6.2/etc/hadoop# fdisk -l
     
     Disk /dev/vda: 26.8 GB, 26843545600 bytes
@@ -70,7 +70,7 @@ fags:
     
        Device Boot      Start         End      Blocks   Id  System
     /dev/vde1            2048  4194303999  2097150976   83  Linux
-
+```
 3.对磁盘分区。
 执行 fdisk /dev/vdd1 命令，对磁盘进行分区。
 依次输入，n，p，1，两次回车，再输入 wq 分区自动进行，并且很快完成。
@@ -91,4 +91,5 @@ fags:
 使用“mount -a”命令挂载新分区，然后用“df -h”命令查看，出现以下信息就说明挂载成功，可以开始使用新的分区了。
 
 
-参考文章：http://help.aliyun.com/knowledge_detail/5974154.htm
+参考文章：
+[http://help.aliyun.com/knowledge_detail/5974154.html](http://help.aliyun.com/knowledge_detail/5974154.html)

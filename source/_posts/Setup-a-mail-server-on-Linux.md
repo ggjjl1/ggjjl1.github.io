@@ -1,7 +1,7 @@
 ---
 title: 在 Linux 上搭建邮件服务器
-tags: Linux
 date: 2014-12-20 23:04:12
+tags: [Linux]
 ---
 ### 需要的软件：
 * postfix

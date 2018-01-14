@@ -1,9 +1,9 @@
 ---
 title: hackintoshing yosemite in xps l502x(在戴尔xps l502x上安装黑苹果）
 date: 2015-01-03 00:45:00
-fags: 
+tags: [Mac OSX,黑苹果]
 ---
-<!--markdown-->由于想尝试在Mac OSX下做开发，之前在虚拟机中体验过，因为速度太慢实在无法忍受，所以决定在PC上面安装黑苹果。我的机器是戴尔XPS L502X，准备安装的系统是Apple最新的OS X Yosemite 10.10.1 。
+由于想尝试在Mac OSX下做开发，之前在虚拟机中体验过，因为速度太慢实在无法忍受，所以决定在PC上面安装黑苹果。我的机器是戴尔XPS L502X，准备安装的系统是Apple最新的OS X Yosemite 10.10.1 。
 硬件配置详情：
 ------鲁大师 Build V5.5.14.1065------
 

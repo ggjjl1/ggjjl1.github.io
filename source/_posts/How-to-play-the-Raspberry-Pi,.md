@@ -1,9 +1,9 @@
 ---
 title: 玩转Raspberry Pi
 date: 2015-01-07 15:46:00
-fags: 
+tags: [Linux,树莓派]
 ---
-<!--markdown-->看到网上有很多人在玩Raspberry Pi(树莓派)，于是我也买了一个准备玩玩。关于树莓派的介绍就不多说了，想了解的自己gogole或者请戳->http://www.raspberrypi.org/
+看到网上有很多人在玩Raspberry Pi(树莓派)，于是我也买了一个准备玩玩。关于树莓派的介绍就不多说了，想了解的自己gogole或者请戳 -> [http://www.raspberrypi.org/](http://www.raspberrypi.org/)
 
 这是我从淘宝上买的树莓派和一些相关的附件
 （此处应该有一张图片）
@@ -13,7 +13,7 @@ fags:
 
 
 给树莓派安装系统
-1.从官网下载树莓派系统http://www.raspberrypi.org/downloads/ 我下载的是raspbian
+1.从官网下载树莓派系统 [http://www.raspberrypi.org/downloads/](http://www.raspberrypi.org/downloads/) 我下载的是raspbian
 2.下载Win32DiskImager，将raspbian系统烧录到SD卡上
 3.将SD卡插入树莓派卡槽
 4.将树莓派连接到路由器上面，登录路由器查看客户端列表，找到树莓派的ip，一般树莓派客户端名是raspberrypi。

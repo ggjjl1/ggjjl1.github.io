@@ -1,9 +1,9 @@
 ---
 title: Nginx+uwsgi部署flask应用
 date: 2015-10-27 20:19:00
-fags: 
+tags: [Linux,Python,Flask]
 ---
-<!--markdown-->一、准备工作
+一、准备工作
 1.ubuntu 14.04
 2.python 2.7
 3.nginx 1.4.6(apt-get install安装)
@@ -20,7 +20,7 @@ nginx的配置文件为nginx.conf
 发现 nginx配置了启动时夹在conf.d下面的配置文件
 2.在conf.d下新建一个配置文件为 zhou.conf（命名随意）
 加入如下内容：
-
+```
     # zhou.conf
     # configuration of the server
     server {
@@ -31,7 +31,7 @@ nginx的配置文件为nginx.conf
             uwsgi_pass 127.0.0.1:8001;
         }
     }
-
+```
 保存，退出。
 重新载入nginx配置文件 nginx -s reload
 
@@ -45,5 +45,5 @@ uwsgi --socket 127.0.0.1:8001 --wsgi-file hello.py --callable app --processes 4 
 
 
 参考：
-［1］http://heipark.iteye.com/blog/1847421
-［2］http://docs.jinkan.org/docs/flask/deploying/uwsgi.html
+［1］[http://heipark.iteye.com/blog/1847421](http://heipark.iteye.com/blog/1847421)
+［2］[http://docs.jinkan.org/docs/flask/deploying/uwsgi.html](http://docs.jinkan.org/docs/flask/deploying/uwsgi.html)

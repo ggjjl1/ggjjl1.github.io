@@ -1,7 +1,7 @@
 ---
 title: Scala 中几种常用集合操作符
 date: 2016-08-12 19:55:41
-tags: Scala
+tags: [Scala]
 ---
 ### Scala 中的几种常用的集合操作符
 * ::
