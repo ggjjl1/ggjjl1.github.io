@@ -5,17 +5,17 @@
   
   <title>如何在MySQL中实现row_number函数 | ggjjl1&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="很久之前给自己挖的坑，现在来把它补完。MySQL的统计函数比较稀缺，很多经典的统计函数如row_number这样的函数在MySQL是没有的，不确定最新版本会不会增加。为了实现这个功能，需要在查询中启用临时变量。比如对这张Employee表加上行号：1234567+----+--------+| Id | Salary |+----+--------+| 1  | 100    || 2  | 20">
+  <meta name="description" content="很久之前给自己挖的坑，现在来把它补完。MySQL的统计函数比较稀缺，很多经典的统计函数如row_number这样的函数在MySQL是没有的，不确定最新版本会不会增加。为了实现这个功能，需要在查询中启用临时变量。比如对这张Employee表加上行号：| Id  | Salary || :– | :—– || 1   | 100    || 2   | 200    || 3   | 300    |">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何在MySQL中实现row_number函数">
 <meta property="og:url" content="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/index.html">
 <meta property="og:site_name" content="ggjjl1&#39;blog">
-<meta property="og:description" content="很久之前给自己挖的坑，现在来把它补完。MySQL的统计函数比较稀缺，很多经典的统计函数如row_number这样的函数在MySQL是没有的，不确定最新版本会不会增加。为了实现这个功能，需要在查询中启用临时变量。比如对这张Employee表加上行号：1234567+----+--------+| Id | Salary |+----+--------+| 1  | 100    || 2  | 20">
+<meta property="og:description" content="很久之前给自己挖的坑，现在来把它补完。MySQL的统计函数比较稀缺，很多经典的统计函数如row_number这样的函数在MySQL是没有的，不确定最新版本会不会增加。为了实现这个功能，需要在查询中启用临时变量。比如对这张Employee表加上行号：| Id  | Salary || :– | :—– || 1   | 100    || 2   | 200    || 3   | 300    |">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-11T08:38:12.585Z">
+<meta property="og:updated_time" content="2020-05-11T09:03:55.119Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在MySQL中实现row_number函数">
-<meta name="twitter:description" content="很久之前给自己挖的坑，现在来把它补完。MySQL的统计函数比较稀缺，很多经典的统计函数如row_number这样的函数在MySQL是没有的，不确定最新版本会不会增加。为了实现这个功能，需要在查询中启用临时变量。比如对这张Employee表加上行号：1234567+----+--------+| Id | Salary |+----+--------+| 1  | 100    || 2  | 20">
+<meta name="twitter:description" content="很久之前给自己挖的坑，现在来把它补完。MySQL的统计函数比较稀缺，很多经典的统计函数如row_number这样的函数在MySQL是没有的，不确定最新版本会不会增加。为了实现这个功能，需要在查询中启用临时变量。比如对这张Employee表加上行号：| Id  | Salary || :– | :—– || 1   | 100    || 2   | 200    || 3   | 300    |">
   
     <link rel="alternate" href="/atom.xml" title="ggjjl1&#39;blog" type="application/atom+xml">
   
@@ -103,15 +103,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>很久之前给自己挖的坑，现在来把它补完。<br>MySQL的统计函数比较稀缺，很多经典的统计函数如row_number这样的函数在MySQL是没有的，不确定最新版本会不会增加。<br>为了实现这个功能，需要在查询中启用临时变量。<br>比如对这张Employee表加上行号：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">----+--------+</span></span><br><span class="line">| Id | Salary |</span><br><span class="line">+<span class="comment">----+--------+</span></span><br><span class="line">| 1  | 100    |</span><br><span class="line">| 2  | 200    |</span><br><span class="line">| 3  | 300    |</span><br><span class="line">+<span class="comment">----+--------+</span></span><br></pre></td></tr></table></figure></p>
-<p>代码如下：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> @row_number = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    (@row_number:=@row_number + <span class="number">1</span>) <span class="keyword">AS</span> <span class="keyword">num</span>, <span class="keyword">id</span>, salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employee</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure></p>
+        <p>很久之前给自己挖的坑，现在来把它补完。<br>MySQL的统计函数比较稀缺，很多经典的统计函数如row_number这样的函数在MySQL是没有的，不确定最新版本会不会增加。<br>为了实现这个功能，需要在查询中启用临时变量。<br>比如对这张Employee表加上行号：<br>| Id  | Salary |<br>| :– | :—– |<br>| 1   | 100    |<br>| 2   | 200    |<br>| 3   | 300    |<br>代码如下：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> @row_number = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    (@row_number:=@row_number + <span class="number">1</span>) <span class="keyword">AS</span> <span class="keyword">num</span>, <span class="keyword">id</span>, salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employee</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure></p>
 <p>也可以这样写：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    (@row_number:=@row_number + <span class="number">1</span>) <span class="keyword">AS</span> <span class="keyword">num</span>, <span class="keyword">id</span>, salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employee,(<span class="keyword">SELECT</span> @row_number:=<span class="number">0</span>) <span class="keyword">AS</span> t</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure></p>
 <p>参考文章：<br><a href="https://segmentfault.com/a/1190000004566152" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004566152</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/" data-id="cka28lij0001hgfaslqdu9cka" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/" data-id="cka29ojxg001gmvas5790w0u5" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/#disqus_thread" class="article-comment-link">留言</a>
       
