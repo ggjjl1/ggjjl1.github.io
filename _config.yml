@@ -12,7 +12,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://gaojunliang.cn
+url: http://ggjjl1.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -77,14 +77,15 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: rsync
-  host: 39.104.88.213
-  user: root
-  root: /home/nginx/www/
-  port: 22
-  delete: true
-  verbose: true
-  ignore_errors: false
+  type: git
+  repo: git@github.com:ggjjl1/ggjjl1.github.io.git
+  branch: master
 
 # Comment System
 disqus_shortname: ggjjl1
+
+# Feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
