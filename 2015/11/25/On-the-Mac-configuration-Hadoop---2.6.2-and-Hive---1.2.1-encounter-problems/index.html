@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>在 Mac 上配置 Hadoop-2.6.2 和 Hive-1.2.1 遇到问题 | ggjjl1&#39;blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="问题描述：在 Mac 上安装配置完 Hadoop-2.6.2 后，再安装 Hive-1.2.1 并启动，出现以下错误信息。1234567891011121314151617181920212223242526272829303132333435gjl: ~/bin/apache-hive-1.2.1-bin $bin/hiveLogging initialized using configurat">
+<meta name="keywords" content="Mac OSX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 Mac 上配置 Hadoop-2.6.2 和 Hive-1.2.1 遇到问题">
+<meta property="og:url" content="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/index.html">
+<meta property="og:site_name" content="ggjjl1&#39;blog">
+<meta property="og:description" content="问题描述：在 Mac 上安装配置完 Hadoop-2.6.2 后，再安装 Hive-1.2.1 并启动，出现以下错误信息。1234567891011121314151617181920212223242526272829303132333435gjl: ~/bin/apache-hive-1.2.1-bin $bin/hiveLogging initialized using configurat">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-14T13:20:42.463Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Mac 上配置 Hadoop-2.6.2 和 Hive-1.2.1 遇到问题">
+<meta name="twitter:description" content="问题描述：在 Mac 上安装配置完 Hadoop-2.6.2 后，再安装 Hive-1.2.1 并启动，出现以下错误信息。1234567891011121314151617181920212223242526272829303132333435gjl: ~/bin/apache-hive-1.2.1-bin $bin/hiveLogging initialized using configurat">
+  
+    <link rel="alternate" href="/atom.xml" title="ggjjl1&#39;blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78679796-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ggjjl1&#39;blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你看或者不看，我都在那里，不悲不喜。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ggjjl1.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/" class="article-date">
+  <time datetime="2015-11-25T04:08:27.000Z" itemprop="datePublished">2015-11-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在 Mac 上配置 Hadoop-2.6.2 和 Hive-1.2.1 遇到问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>问题描述：<br>在 Mac 上安装配置完 Hadoop-2.6.2 后，再安装 Hive-1.2.1 并启动，出现以下错误信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">gjl: ~/bin/apache-hive-1.2.1-bin $bin/hive</span><br><span class="line"></span><br><span class="line">Logging initialized using configuration in jar:file:/Users/gaojunliang/bin/apache-hive-1.2.1-bin/lib/hive-common-1.2.1.jar!/hive-log4j.properties</span><br><span class="line">[ERROR] Terminal initialization failed; falling back to unsupported</span><br><span class="line">java.lang.IncompatibleClassChangeError: Found class jline.Terminal, but interface was expected</span><br><span class="line">    at jline.TerminalFactory.create(TerminalFactory.java:101)</span><br><span class="line">    at jline.TerminalFactory.get(TerminalFactory.java:158)</span><br><span class="line">    at jline.console.ConsoleReader.&lt;init&gt;(ConsoleReader.java:229)</span><br><span class="line">    at jline.console.ConsoleReader.&lt;init&gt;(ConsoleReader.java:221)</span><br><span class="line">    at jline.console.ConsoleReader.&lt;init&gt;(ConsoleReader.java:209)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.setupConsoleReader(CliDriver.java:787)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:721)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:681)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:621)</span><br><span class="line">    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span><br><span class="line">    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)</span><br><span class="line">    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</span><br><span class="line">    at java.lang.reflect.Method.invoke(Method.java:606)</span><br><span class="line">    at org.apache.hadoop.util.RunJar.run(RunJar.java:221)</span><br><span class="line">    at org.apache.hadoop.util.RunJar.main(RunJar.java:136)</span><br><span class="line"></span><br><span class="line">Exception in thread &quot;main&quot; java.lang.IncompatibleClassChangeError: Found class jline.Terminal, but interface was expected</span><br><span class="line">    at jline.console.ConsoleReader.&lt;init&gt;(ConsoleReader.java:230)</span><br><span class="line">    at jline.console.ConsoleReader.&lt;init&gt;(ConsoleReader.java:221)</span><br><span class="line">    at jline.console.ConsoleReader.&lt;init&gt;(ConsoleReader.java:209)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.setupConsoleReader(CliDriver.java:787)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:721)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:681)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:621)</span><br><span class="line">    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span><br><span class="line">    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)</span><br><span class="line">    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</span><br><span class="line">    at java.lang.reflect.Method.invoke(Method.java:606)</span><br><span class="line">    at org.apache.hadoop.util.RunJar.run(RunJar.java:221)</span><br><span class="line">    at org.apache.hadoop.util.RunJar.main(RunJar.java:136)</span><br></pre></td></tr></table></figure></p>
+<p>解决办法：<br>将 Hive 中的 jline 从 2.x 版本降级到 1.x 之后，将 Hadoop 中 share/hadoop/yarn/lib 目录下的 jline 升级到 2.x 版本。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/" data-id="cka26j16j000i9las8b2onlbb" class="article-share-link">Share</a>
+      
+        <a href="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac-OSX/">Mac OSX</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/26/Mount-the-hard-disk-on-Linux/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          在 Linux 上挂载硬盘
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/14/Mac-OS-X-10.11-problems-installing-MySQLdb/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Mac OS X 10.11 上安装 MySQLdb 出现问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!--
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+-->
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://ggjjl1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-OSX/">Mac OSX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenSUSE/">OpenSUSE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDL/">SDL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scala/">Scala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/">Spark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树莓派/">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译/">编译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑苹果/">黑苹果</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Mac-OSX/" style="font-size: 15px;">Mac OSX</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/OpenSUSE/" style="font-size: 10px;">OpenSUSE</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/SDL/" style="font-size: 10px;">SDL</a> <a href="/tags/Scala/" style="font-size: 10px;">Scala</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/编译/" style="font-size: 12.5px;">编译</a> <a href="/tags/黑苹果/" style="font-size: 10px;">黑苹果</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/13/rename-filenames-with-shell/">使用shell批量更改文件名</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/12/Some-operator-of-set-of-scala/">Scala 中几种常用集合操作符</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/">使用 Spark SQL 读取 Hive 上的数据</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/13/Start-using-packages/">开始使用OpenSUSE</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/06/Installing-MySQLdb-under-Mac/">Mac 下安装 MySQLdb</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 ggjjl1&nbsp;|&nbsp;<a href="">京ICP备19020544号</a><br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'ggjjl1';
+  
+  var disqus_url = 'http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

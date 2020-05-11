@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>开始使用OpenSUSE | ggjjl1&#39;blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="【前言】之前一直在用Ubuntu和CentOS，最近看到github上有位大神强烈推荐OpenSUSE这个系统。于是，顺着一直想找个新的Linux发行版玩玩的想法，搭上了openSUSE的这般顺风车。 【开始】上openSUSE的官网下载了最新的版本，openSUSE leap 42.1。这里我并不了解这个版本号的意义，也不清楚openSUSE的上一个版本是多少。直接下载了最新的稳定版42.1，开">
+<meta name="keywords" content="Linux,OpenSUSE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开始使用OpenSUSE">
+<meta property="og:url" content="http://ggjjl1.com/2016/03/13/Start-using-packages/index.html">
+<meta property="og:site_name" content="ggjjl1&#39;blog">
+<meta property="og:description" content="【前言】之前一直在用Ubuntu和CentOS，最近看到github上有位大神强烈推荐OpenSUSE这个系统。于是，顺着一直想找个新的Linux发行版玩玩的想法，搭上了openSUSE的这般顺风车。 【开始】上openSUSE的官网下载了最新的版本，openSUSE leap 42.1。这里我并不了解这个版本号的意义，也不清楚openSUSE的上一个版本是多少。直接下载了最新的稳定版42.1，开">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-14T13:20:42.465Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开始使用OpenSUSE">
+<meta name="twitter:description" content="【前言】之前一直在用Ubuntu和CentOS，最近看到github上有位大神强烈推荐OpenSUSE这个系统。于是，顺着一直想找个新的Linux发行版玩玩的想法，搭上了openSUSE的这般顺风车。 【开始】上openSUSE的官网下载了最新的版本，openSUSE leap 42.1。这里我并不了解这个版本号的意义，也不清楚openSUSE的上一个版本是多少。直接下载了最新的稳定版42.1，开">
+  
+    <link rel="alternate" href="/atom.xml" title="ggjjl1&#39;blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78679796-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ggjjl1&#39;blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你看或者不看，我都在那里，不悲不喜。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ggjjl1.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Start-using-packages" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/13/Start-using-packages/" class="article-date">
+  <time datetime="2016-03-13T04:16:02.000Z" itemprop="datePublished">2016-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      开始使用OpenSUSE
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>【前言】<br>之前一直在用Ubuntu和CentOS，最近看到github上有位大神强烈推荐OpenSUSE这个系统。于是，顺着一直想找个新的Linux发行版玩玩的想法，搭上了openSUSE的这般顺风车。</p>
+<p>【开始】<br>上openSUSE的官网下载了最新的版本，openSUSE leap 42.1。这里我并不了解这个版本号的意义，也不清楚openSUSE的上一个版本是多少。直接下载了最新的稳定版42.1，开始了openSUSE的征程！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ggjjl1.com/2016/03/13/Start-using-packages/" data-id="cka26j16w00129lash9jihvxa" class="article-share-link">Share</a>
+      
+        <a href="http://ggjjl1.com/2016/03/13/Start-using-packages/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenSUSE/">OpenSUSE</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          使用 Spark SQL 读取 Hive 上的数据
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/06/Installing-MySQLdb-under-Mac/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Mac 下安装 MySQLdb</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!--
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+-->
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://ggjjl1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-OSX/">Mac OSX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenSUSE/">OpenSUSE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDL/">SDL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scala/">Scala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/">Spark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树莓派/">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译/">编译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑苹果/">黑苹果</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Mac-OSX/" style="font-size: 15px;">Mac OSX</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/OpenSUSE/" style="font-size: 10px;">OpenSUSE</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/SDL/" style="font-size: 10px;">SDL</a> <a href="/tags/Scala/" style="font-size: 10px;">Scala</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/编译/" style="font-size: 12.5px;">编译</a> <a href="/tags/黑苹果/" style="font-size: 10px;">黑苹果</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/13/rename-filenames-with-shell/">使用shell批量更改文件名</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/12/Some-operator-of-set-of-scala/">Scala 中几种常用集合操作符</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/">使用 Spark SQL 读取 Hive 上的数据</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/13/Start-using-packages/">开始使用OpenSUSE</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/06/Installing-MySQLdb-under-Mac/">Mac 下安装 MySQLdb</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 ggjjl1&nbsp;|&nbsp;<a href="">京ICP备19020544号</a><br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'ggjjl1';
+  
+  var disqus_url = 'http://ggjjl1.com/2016/03/13/Start-using-packages/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

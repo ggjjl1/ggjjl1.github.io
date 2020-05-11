@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ggjjl1&#39;blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="ggjjl1&#39;blog">
+<meta property="og:url" content="http://ggjjl1.com/page/3/index.html">
+<meta property="og:site_name" content="ggjjl1&#39;blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ggjjl1&#39;blog">
+  
+    <link rel="alternate" href="/atom.xml" title="ggjjl1&#39;blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78679796-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ggjjl1&#39;blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你看或者不看，我都在那里，不悲不喜。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ggjjl1.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Python-batch-rename-the-file-name-(mainly-to-deal-with-a-lot-of-irregular-image-name)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/06/Python-batch-rename-the-file-name-(mainly-to-deal-with-a-lot-of-irregular-image-name)/" class="article-date">
+  <time datetime="2015-01-06T14:49:00.000Z" itemprop="datePublished">2015-01-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/06/Python-batch-rename-the-file-name-(mainly-to-deal-with-a-lot-of-irregular-image-name)/">python批量重命名文件名（主要是用来处理一大堆不规则照片名）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>可能由于一时鬼迷心窍，看网友说什么，Adobe RGB色彩空间多么多么好，显示效果多么丰富。于是，一个错误的决定带来了trouble，也可以说不是什么问题（由于本人强迫症严重）。Canon 70D设置成Adobe RGB色彩空间后文件的命名方式变成了_MG_1200.CR2、_MG_1001.JPG 本来是如IMG_8888.CR2、IMG<em>2000.JPG这样的命名。再加上我所有的照片都丢在一个文件夹里的，而Windows的文件排序方式居然以</em><em>.**</em>开头的，这就导致了我这部分拍摄的照片跑到了我之前拍摄的照片的前面，这让我，非常非常地，eggache！！！而且，我后来发现，原来AdobeRGB跟sRGB色彩空间的区别只出现在JPG格式上，而RAW格式是没有色彩空间这一属性的，就是说不管你设置的是AdobeRGB还是sRGB，RAW出来的片子是一样一样的。奇葩的是，命名却也变成了’_’开头的方式。。。而最可恨的是，用windows自带的图片查看器打开AdobeRGB的JPG图片时，由于色彩空间超出了所表示的范围，出现了严重的色彩指针。这。。。这的让我很难受啊。。。于是，问题来了。。。<em>如何在Windows下批量修改文件名或者删除指定文件？</em></p>
+<p>刚开始的时候我理所应当的想到windows自带的批处理文件，这个我们平时也经常用到。但是，我完全不熟悉windows批处理，然后上网查了一些教程学习之后，感觉bat批处理还是挺困难的。最后，放弃win批处理，投身python方式。</p>
+<p>好了，说了这么多废话，终于要来重头戏了。接好！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">import os, sys, string</span><br><span class="line"></span><br><span class="line">srcfiles = os.listdir(&apos;.&apos;)</span><br><span class="line">for srcfile in srcfiles:</span><br><span class="line">    filename, suffix = os.path.splitext(srcfile)</span><br><span class="line">    if filename[0] == &apos;_&apos;:</span><br><span class="line">        if suffix.lower() == &apos;.jpg&apos;:</span><br><span class="line">            targetfile = os.path.join(&apos;./&apos;, srcfile)</span><br><span class="line">            os.remove(targetfile)</span><br><span class="line">            print u&apos;删除&apos; + filename + suffix</span><br><span class="line">        else:</span><br><span class="line">            destfile = &apos;./&apos; + &apos;I&apos;+filename[1:]+suffix</span><br><span class="line">            os.rename(srcfile, destfile)</span><br><span class="line">            print destfile</span><br><span class="line"></span><br><span class="line">print u&apos;所有文件处理完毕!</span><br></pre></td></tr></table></figure></p>
+<p>这是一个python脚本文件，将该脚本拖到需要重命名文件的目录下双击运行即可（当然需要python环境）。<br>脚本主要特征，运行之后一个可以将_MG_1212.CR2文件改名为IMG_1212.CR2和将_MG_1313.JPG之类的文件删除，因为这类JPG文件色彩严重失真，你一定是不想要的！</p>
+<p>这个python脚本仅供大家参考，有不懂的地方请大家自行google，最后，希望能够帮到大家！！！</p>
+<p>声明：本脚本仅供各位朋友学习测试使用，如出现任何问题，本人概不负责！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ggjjl1.com/2015/01/06/Python-batch-rename-the-file-name-(mainly-to-deal-with-a-lot-of-irregular-image-name)/" data-id="cka26j16m000n9las9mdmgmh5" class="article-share-link">Share</a>
+      
+        <a href="http://ggjjl1.com/2015/01/06/Python-batch-rename-the-file-name-(mainly-to-deal-with-a-lot-of-irregular-image-name)/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!--
+
+-->
+
+  
+    <article id="post-Windows-batch-command" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/06/Windows-batch-command/" class="article-date">
+  <time datetime="2015-01-05T16:51:00.000Z" itemprop="datePublished">2015-01-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/06/Windows-batch-command/">Windows批处理命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.查看一下windows下都有哪些批处理命令，方法很简单也很容易想到。打开一个CMD窗口输入help，会显示如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">有关某个命令的详细信息，请键入 HELP 命令名</span><br><span class="line">ASSOC          显示或修改文件扩展名关联。</span><br><span class="line">ATTRIB         显示或更改文件属性。</span><br><span class="line">BREAK          设置或清除扩展式 CTRL+C 检查。</span><br><span class="line">BCDEDIT        设置启动数据库中的属性以控制启动加载。</span><br><span class="line">CACLS          显示或修改文件的访问控制列表(ACL)。</span><br><span class="line">CALL           从另一个批处理程序调用这一个。</span><br><span class="line">CD             显示当前目录的名称或将其更改。</span><br><span class="line">CHCP           显示或设置活动代码页数。</span><br><span class="line">CHDIR          显示当前目录的名称或将其更改。</span><br><span class="line">CHKDSK         检查磁盘并显示状态报告。</span><br><span class="line">CHKNTFS        显示或修改启动时间磁盘检查。</span><br><span class="line">CLS            清除屏幕。</span><br><span class="line">CMD            打开另一个 Windows 命令解释程序窗口。</span><br><span class="line">COLOR          设置默认控制台前景和背景颜色。</span><br><span class="line">COMP           比较两个或两套文件的内容。</span><br><span class="line">COMPACT        显示或更改 NTFS 分区上文件的压缩。</span><br><span class="line">CONVERT        将 FAT 卷转换成 NTFS。你不能转换当前驱动器。</span><br><span class="line">COPY           将至少一个文件复制到另一个位置。</span><br><span class="line">DATE           显示或设置日期。</span><br><span class="line">DEL            删除至少一个文件。</span><br><span class="line">DIR            显示一个目录中的文件和子目录。</span><br><span class="line">DISKCOMP       比较两个软盘的内容。</span><br><span class="line">DISKCOPY       将一个软盘的内容复制到另一个软盘。</span><br><span class="line">DISKPART       显示或配置磁盘分区属性。</span><br><span class="line">DOSKEY         编辑命令行、调用 Windows 命令并创建宏。</span><br><span class="line">DRIVERQUERY    显示当前设备驱动程序状态和属性。</span><br><span class="line">ECHO           显示消息，或将命令回显打开或关上。</span><br><span class="line">ENDLOCAL       结束批文件中环境更改的本地化。</span><br><span class="line">ERASE          删除一个或多个文件。</span><br><span class="line">EXIT           退出 CMD.EXE 程序(命令解释程序)。</span><br><span class="line">FC             比较两个文件或两个文件集并显示它们之间的不同。</span><br><span class="line">FIND           在一个或多个文件中搜索一个文本字符串。</span><br><span class="line">FINDSTR        在多个文件中搜索字符串。</span><br><span class="line">FOR            为一套文件中的每个文件运行一个指定的命令。</span><br><span class="line">FORMAT         格式化磁盘，以便跟 Windows 使用。</span><br><span class="line">FSUTIL         显示或配置文件系统的属性。</span><br><span class="line">FTYPE          显示或修改用在文件扩展名关联的文件类型。</span><br><span class="line">GOTO           将 Windows 命令解释程序指向批处理程序中某个带标签的行。</span><br><span class="line">GPRESULT       显示机器或用户的组策略信息。</span><br><span class="line">GRAFTABL       启用 Windows 在图形模式显示扩展字符集。</span><br><span class="line">HELP           提供 Windows 命令的帮助信息。</span><br><span class="line">ICACLS         显示、修改、备份或还原文件和目录的 ACL。</span><br><span class="line">IF             在批处理程序中执行有条件的处理过程。</span><br><span class="line">LABEL          创建、更改或删除磁盘的卷标。</span><br><span class="line">MD             创建一个目录。</span><br><span class="line">MKDIR          创建一个目录。</span><br><span class="line">MKLINK         创建符号链接和硬链接</span><br><span class="line">MODE           配置系统设备。</span><br><span class="line">MORE           逐屏显示输出。</span><br><span class="line">MOVE           将一个或多个文件从一个目录移动到另一个目录。</span><br><span class="line">OPENFILES      显示远程用户为了文件共享而打开的文件。</span><br><span class="line">PATH           为可执行文件显示或设置搜索路径。</span><br><span class="line">PAUSE          停止批处理文件的处理并显示信息。</span><br><span class="line">POPD           还原由 PUSHD 保存的当前目录上一次的值。</span><br><span class="line">PRINT          打印一个文本文件。</span><br><span class="line">PROMPT         改变 Windows 命令提示。</span><br><span class="line">PUSHD          保存当前目录，然后对其进行更改。</span><br><span class="line">RD             删除目录。</span><br><span class="line">RECOVER        从损坏的磁盘中恢复可读取的信息。</span><br><span class="line">REM            记录批处理文件或 CONFIG.SYS 中的注释。</span><br><span class="line">REN            重新命名文件。</span><br><span class="line">RENAME         重新命名文件。</span><br><span class="line">REPLACE        替换文件。</span><br><span class="line">RMDIR          删除目录。</span><br><span class="line">ROBOCOPY       复制文件和目录树的高级实用程序</span><br><span class="line">SET            显示、设置或删除 Windows 环境变量。</span><br><span class="line">SETLOCAL       开始用批文件改变环境的本地化。</span><br><span class="line">SC             显示或配置服务(后台进程)。</span><br><span class="line">SCHTASKS       安排命令和程序在一部计算机上按计划运行。</span><br><span class="line">SHIFT          调整批处理文件中可替换参数的位置。</span><br><span class="line">SHUTDOWN       让机器在本地或远程正确关闭。</span><br><span class="line">SORT           将输入排序。</span><br><span class="line">START          打开单独视窗运行指定程序或命令。</span><br><span class="line">SUBST          将驱动器号与路径关联。</span><br><span class="line">SYSTEMINFO     显示机器的具体的属性和配置。</span><br><span class="line">TASKLIST       显示包括服务的所有当前运行的任务。</span><br><span class="line">TASKKILL       终止正在运行的进程或应用程序。</span><br><span class="line">TIME           显示或设置系统时间。</span><br><span class="line">TITLE          设置 CMD.EXE 会话的窗口标题。</span><br><span class="line">TREE           以图形显示启动器或路径的目录结构。</span><br><span class="line">TYPE           显示文本文件的内容。</span><br><span class="line">VER            显示 Windows 的版本。</span><br><span class="line">VERIFY         告诉 Windows 验证文件是否正确写入磁盘。</span><br><span class="line">VOL            显示磁盘卷标和序列号。</span><br><span class="line">XCOPY          复制文件和目录树。</span><br><span class="line">WMIC           在交互命令外壳里显示 WMI 信息。</span><br></pre></td></tr></table></figure></p>
+<pre><code>有关工具的详细信息，请参阅联机帮助中的命令行参考。
+</code></pre><p>2.写一个Hello World<br>随便在哪个目录下面，新建一个helloworld.bat的文件，输入<br>@echo off<br>echo Hello World<br>pause<br>保存退出，双击执行helloworld.bat文件，你会看到在CMD窗口中显示Hello World</p>
+<p>3.命令详解</p>
+<ol>
+<li>echo</li>
+<li>rem和::</li>
+<li>@</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ggjjl1.com/2015/01/06/Windows-batch-command/" data-id="cka26j176001h9laswyfarakx" class="article-share-link">Share</a>
+      
+        <a href="http://ggjjl1.com/2015/01/06/Windows-batch-command/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!--
+
+-->
+
+  
+    <article id="post-Hackintoshing-Yosemite-in-XPS-l502x-(installed-on-the-dell-XPS-l502x-black-apple)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/03/Hackintoshing-Yosemite-in-XPS-l502x-(installed-on-the-dell-XPS-l502x-black-apple)/" class="article-date">
+  <time datetime="2015-01-02T16:45:00.000Z" itemprop="datePublished">2015-01-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/03/Hackintoshing-Yosemite-in-XPS-l502x-(installed-on-the-dell-XPS-l502x-black-apple)/">hackintoshing yosemite in xps l502x(在戴尔xps l502x上安装黑苹果）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于想尝试在Mac OSX下做开发，之前在虚拟机中体验过，因为速度太慢实在无法忍受，所以决定在PC上面安装黑苹果。我的机器是戴尔XPS L502X，准备安装的系统是Apple最新的OS X Yosemite 10.10.1 。<br>硬件配置详情：<br>——鲁大师 Build V5.5.14.1065——</p>
+<p>电脑型号: 戴尔 System XPS L502X 笔记本电脑<br>操作系统: Windows 8.1 专业版 64位</p>
+<p>  处理器: 英特尔 第二代酷睿 i7-2630QM @ 2.00GHz 四核<br>    主板: 戴尔 0NJT03<br>    内存: 8 GB ( 金士顿 DDR3 1333MHz / 三星 DDR3 1333MHz )<br>  主硬盘: 西数 WDC WD7500BPKT-75PK4T0 ( 750 GB / 7200 转/分 )<br>    显卡: Nvidia GeForce GT 540M ( 2 GB / 戴尔 )<br>  显示器: 友达 AUO17ED ( 15.3 英寸 )<br>    光驱: 日立-LG DVD+-RW GT32N DVD刻录机<br>    声卡: 瑞昱 ALC665 高保真音频<br>    网卡: 瑞昱 RTL8168E PCI-E Gigabit Ethernet NIC / 戴尔</p>
+<p>准备工作：<br>1.先对硬盘进行分区<br>从硬盘中分一块区域用来安装OSX，如果没有空闲的分区，可以在已经分出来的区域中（如E盘、F盘）进行压缩卷（压缩卷就是从E盘空闲的区域重新分一块新的区域出来</p>
+<p>注：很多品牌电脑出厂自带OEM分区和Recovery分区，需要对这两个分区添加盘符，不然引导工具无法正确安装。<br>给分区添加盘符方法很简单，可以使用windows自带的diskpart工具。步骤如下<br>a.运行CMD<br>b.输入diskpart      #打开windows磁盘分区工具<br>c.list disk        #这一步会显示你电脑上有多少块硬盘<br>d.选择你要安装系统的磁盘，我这里选择sel disk 0<br>e.list part     #列出磁盘上所有的分区，找到OEM所对应的分区<br>f.sel part 1<br>g.set id 7   #给分区设置一个ID，数字随便给，这样就能显示出来了，如果还不行assign letter P，分配盘符</p>
+<p>2.制作安装盘<br>我使用的是U盘安装，所以我只做了一个安装U盘。</p>
+<p>完成这些步骤之后，拔出U盘然后再插上，在资源管理器中可以看到U盘的EFI分区。将解压得到的boot文件和EFI文件拷贝到安装U盘的EFI分区目录下。到此OSX的安装U盘制作完成。</p>
+<p>3.安装OSX系统</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ggjjl1.com/2015/01/03/Hackintoshing-Yosemite-in-XPS-l502x-(installed-on-the-dell-XPS-l502x-black-apple)/" data-id="cka26j15y00029las54j5usf1" class="article-share-link">Share</a>
+      
+        <a href="http://ggjjl1.com/2015/01/03/Hackintoshing-Yosemite-in-XPS-l502x-(installed-on-the-dell-XPS-l502x-black-apple)/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac-OSX/">Mac OSX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/黑苹果/">黑苹果</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!--
+
+-->
+
+  
+    <article id="post-At-the-beginning-of-the-Linux-kernel-compilation-experience" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/01/At-the-beginning-of-the-Linux-kernel-compilation-experience/" class="article-date">
+  <time datetime="2015-01-01T09:55:14.000Z" itemprop="datePublished">2015-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/01/At-the-beginning-of-the-Linux-kernel-compilation-experience/">linux内核编译之初体验</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有了一段时间的linux，感觉linux真的是一个非常非常强大的操作系统。为了能更直接的了解linux，决定自己动手编译一下linux的内核。在此之前，我baidu了很多网友写的一些关于编译linux内核的文章。因为linux版本迭代的速度太快，所以基本上大部分的文章中介绍的版本都已经太老了，但是还好内核的编译步骤基本上怎么变化过。我就以这篇文章作为参考，地址：<a href="http://www.cnblogs.com/top5/archive/2011/03/04/1970645.html" target="_blank" rel="noopener">http://www.cnblogs.com/top5/archive/2011/03/04/1970645.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ggjjl1.com/2015/01/01/At-the-beginning-of-the-Linux-kernel-compilation-experience/" data-id="cka26j15x00019lasy0pj9732" class="article-share-link">Share</a>
+      
+        <a href="http://ggjjl1.com/2015/01/01/At-the-beginning-of-the-Linux-kernel-compilation-experience/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编译/">编译</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!--
+
+-->
+
+  
+    <article id="post-One-of-the-SDL-study-notes" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/28/One-of-the-SDL-study-notes/" class="article-date">
+  <time datetime="2014-12-28T15:39:00.000Z" itemprop="datePublished">2014-12-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/28/One-of-the-SDL-study-notes/">SDL学习笔记之一</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>写在前面：要说学习SDL的目的，其实是为了想开发一个自己的视频播放器。上网查了很多资料关于开发视频播放器，其中找到一篇博文写的用FFMPEG+SDL来实现一个用100行代码写的释放器。为了弄明白SDL到底是个什么东西，决定去学习一下SDL的API。我在学习SDL的时候，参考的是Lazy Foo老兄写的 Beginning Game Programming v2.0 。<br>这是他的网站地址：<a href="http://lazyfoo.net/tutorials/SDL/index.php" target="_blank" rel="noopener">http://lazyfoo.net/tutorials/SDL/index.php</a></p>
+<p>关于SDL：<br>SDL(Simple DirectMedia Layer)是一个跨平台的开发库，旨在提供低级的获取声音，键盘，鼠标，操纵杆和图形硬件通过OpenGL和Direct3D。它被用在视频播放软件，模拟器和流行的游戏上，包括Valve’s award winning catalog和许多Humble Bundle游戏。<br>SDL的官网：<a href="https://www.libsdl.org/" target="_blank" rel="noopener">https://www.libsdl.org/</a></p>
+<p>下载SDL：<br>目前SDL已经更新到2.0版本。下载地址：<a href="https://www.libsdl.org/download-2.0.php" target="_blank" rel="noopener">https://www.libsdl.org/download-2.0.php</a> 我使用的操作系统是Win8.1，因为我搭建了MinGW环境，所以使用SDL2-devel-2.0.3-mingw.tar.gz (MinGW 32/64-bit)来进行开发。</p>
+<p>使用SDL开发第一个程序：</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ggjjl1.com/2014/12/28/One-of-the-SDL-study-notes/" data-id="cka26j16l000l9lasngo9zly2" class="article-share-link">Share</a>
+      
+        <a href="http://ggjjl1.com/2014/12/28/One-of-the-SDL-study-notes/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SDL/">SDL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!--
+
+-->
+
+  
+    <article id="post-VSFTPD-installation-configuration" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/21/VSFTPD-installation-configuration/" class="article-date">
+  <time datetime="2014-12-21T15:33:26.000Z" itemprop="datePublished">2014-12-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/21/VSFTPD-installation-configuration/">vsftpd安装配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>vsftpd简介</strong><br>vsftpd是一个运行在类unix上的FTP服务器程序，能运行在linux，BSD，Soliars等多个平台上</p>
+<p><strong>vsftpd安装</strong><br>1.使用yum安装或者在ubuntu上面使用apt-get方式<br>2.去官网下载源码包<br>[root@localhost ~]# tar zxvf vsftpd-2.0.3.tar.gz<br>[root@localhost ~]# cd vsftpd-2.0.3<br>[root@localhost ~]# make &amp;&amp; make install<br>[root@localhost ~]# cp vsftpd.conf /etc<br>然后修改/etc/vsftpd.conf ，在配置文件的最后一行加入下面一行；<br>listen=yes</p>
+<p><strong>vsftpd配置</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ggjjl1.com/2014/12/21/VSFTPD-installation-configuration/" data-id="cka26j171001a9lasrgxuo6nt" class="article-share-link">Share</a>
+      
+        <a href="http://ggjjl1.com/2014/12/21/VSFTPD-installation-configuration/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!--
+
+-->
+
+  
+    <article id="post-Setup-a-mail-server-on-Linux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/20/Setup-a-mail-server-on-Linux/" class="article-date">
+  <time datetime="2014-12-20T15:04:12.000Z" itemprop="datePublished">2014-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/20/Setup-a-mail-server-on-Linux/">在 Linux 上搭建邮件服务器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="需要的软件："><a href="#需要的软件：" class="headerlink" title="需要的软件："></a>需要的软件：</h3><ul>
+<li>postfix</li>
+<li>mysql</li>
+<li>openssl</li>
+<li>sasl<h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3></li>
+</ul>
+<ol>
+<li>mysql安装（略）</li>
+<li>openssl安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf openssl-0.9.8e.tar.gz</span><br><span class="line">cd openssl-0.9.8e</span><br><span class="line">./config shared zlib</span><br><span class="line">make</span><br><span class="line">make test</span><br><span class="line">make install</span><br><span class="line">mv /usr/bin/openssl /usr/bin/openssl.OFF</span><br><span class="line">mv /usr/include/openssl /usr/include/openssl.OFF</span><br><span class="line">rm /usr/lib/libssl.so</span><br><span class="line">ln -s /usr/local/ssl/bin/openssl /usr/bin/openssl</span><br><span class="line">ln -s /usr/local/ssl/include/openssl /usr/include/openssl</span><br><span class="line">ln -sv /usr/local/ssl/lib/libssl.so.0.9.8 /usr/lib/libssl.so</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="配置库文件搜索路径"><a href="#配置库文件搜索路径" class="headerlink" title="配置库文件搜索路径"></a>配置库文件搜索路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;/usr/local/ssl/lib&quot; &gt;&gt; /etc/ld.so.conf</span><br><span class="line">ldconfig -v</span><br></pre></td></tr></table></figure>
+<h3 id="检测安装结果"><a href="#检测安装结果" class="headerlink" title="检测安装结果"></a>检测安装结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl version</span><br><span class="line">OpenSSL 0.9.8e 23 Feb 2007</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ggjjl1.com/2014/12/20/Setup-a-mail-server-on-Linux/" data-id="cka26j16q000u9lasi439r1vr" class="article-share-link">Share</a>
+      
+        <a href="http://ggjjl1.com/2014/12/20/Setup-a-mail-server-on-Linux/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!--
+
+-->
+
+  
+    <article id="post-After-writing-a-blog-in-this-place" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/20/After-writing-a-blog-in-this-place/" class="article-date">
+  <time datetime="2014-12-20T12:26:00.000Z" itemprop="datePublished">2014-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/20/After-writing-a-blog-in-this-place/">以后就在这个地方写博客吧</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本博客创建于2014年12月30日</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ggjjl1.com/2014/12/20/After-writing-a-blog-in-this-place/" data-id="cka26j15t00009laszlj29rbl" class="article-share-link">Share</a>
+      
+        <a href="http://ggjjl1.com/2014/12/20/After-writing-a-blog-in-this-place/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!--
+
+-->
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-OSX/">Mac OSX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenSUSE/">OpenSUSE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDL/">SDL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scala/">Scala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/">Spark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树莓派/">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译/">编译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑苹果/">黑苹果</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Mac-OSX/" style="font-size: 15px;">Mac OSX</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/OpenSUSE/" style="font-size: 10px;">OpenSUSE</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/SDL/" style="font-size: 10px;">SDL</a> <a href="/tags/Scala/" style="font-size: 10px;">Scala</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/编译/" style="font-size: 12.5px;">编译</a> <a href="/tags/黑苹果/" style="font-size: 10px;">黑苹果</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/13/rename-filenames-with-shell/">使用shell批量更改文件名</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/12/Some-operator-of-set-of-scala/">Scala 中几种常用集合操作符</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/">使用 Spark SQL 读取 Hive 上的数据</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/13/Start-using-packages/">开始使用OpenSUSE</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/06/Installing-MySQLdb-under-Mac/">Mac 下安装 MySQLdb</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 ggjjl1&nbsp;|&nbsp;<a href="">京ICP备19020544号</a><br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'ggjjl1';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
