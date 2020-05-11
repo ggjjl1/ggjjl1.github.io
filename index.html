@@ -109,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2018/01/13/rename-filenames-with-shell/" data-id="cka26j177001j9lasc255nk3r" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2018/01/13/rename-filenames-with-shell/" data-id="cka28f9u4001jelas8dofftj6" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2018/01/13/rename-filenames-with-shell/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -163,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2016/08/12/Some-operator-of-set-of-scala/" data-id="cka26j16v000z9lasx0vga0um" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2016/08/12/Some-operator-of-set-of-scala/" data-id="cka28f9tl0011elas9lm9s3b3" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2016/08/12/Some-operator-of-set-of-scala/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -207,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/" data-id="cka26j16o000s9lasmi9jj6b1" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/" data-id="cka28f9tf000selasm2hfwzao" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -252,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2016/03/13/Start-using-packages/" data-id="cka26j16w00129lash9jihvxa" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2016/03/13/Start-using-packages/" data-id="cka28f9tj000yelas6e9ockhr" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2016/03/13/Start-using-packages/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -299,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2016/03/06/Installing-MySQLdb-under-Mac/" data-id="cka26j16500069lasyu9nm2fc" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2016/03/06/Installing-MySQLdb-under-Mac/" data-id="cka28f9su0004elas2s142m7r" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2016/03/06/Installing-MySQLdb-under-Mac/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -316,9 +316,9 @@
 -->
 
   
-    <article id="post-How-to-implement-in-MySQL-row_number-()-over-()-function" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-row_number-in-MySQL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/11/29/How-to-implement-in-MySQL-row_number-()-over-()-function/" class="article-date">
+    <a href="/2015/11/29/row_number-in-MySQL/" class="article-date">
   <time datetime="2015-11-29T08:22:16.000Z" itemprop="datePublished">2015-11-29</time>
 </a>
     
@@ -330,7 +330,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/29/How-to-implement-in-MySQL-row_number-()-over-()-function/">如何在 MySQL 中实现 row_number() over()函数</a>
+      <a class="article-title" href="/2015/11/29/row_number-in-MySQL/">如何在MySQL中实现row_number函数</a>
     </h1>
   
 
@@ -338,13 +338,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>很久之前给自己挖的坑，现在来把它补完。<br>MySQL的统计函数比较稀缺，很多经典的统计函数如row_number这样的函数在MySQL是没有的，不确定最新版本会不会增加。<br>为了实现这个功能，需要在查询中启用临时变量。<br>比如对这张Employee表加上行号：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">----+--------+</span></span><br><span class="line">| Id | Salary |</span><br><span class="line">+<span class="comment">----+--------+</span></span><br><span class="line">| 1  | 100    |</span><br><span class="line">| 2  | 200    |</span><br><span class="line">| 3  | 300    |</span><br><span class="line">+<span class="comment">----+--------+</span></span><br></pre></td></tr></table></figure></p>
+<p>代码如下：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> @row_number = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    (@row_number:=@row_number + <span class="number">1</span>) <span class="keyword">AS</span> <span class="keyword">num</span>, <span class="keyword">id</span>, salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employee</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure></p>
+<p>也可以这样写：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    (@row_number:=@row_number + <span class="number">1</span>) <span class="keyword">AS</span> <span class="keyword">num</span>, <span class="keyword">id</span>, salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employee,(<span class="keyword">SELECT</span> @row_number:=<span class="number">0</span>) <span class="keyword">AS</span> t</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure></p>
+<p>参考文章：<br><a href="https://segmentfault.com/a/1190000004566152" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004566152</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/29/How-to-implement-in-MySQL-row_number-()-over-()-function/" data-id="cka26j16200049lasj6pmqwpj" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/" data-id="cka28f9tz001eelas8ab10bak" class="article-share-link">Share</a>
       
-        <a href="http://ggjjl1.com/2015/11/29/How-to-implement-in-MySQL-row_number-()-over-()-function/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/#disqus_thread" class="article-comment-link">留言</a>
       
       
     </footer>
@@ -395,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/26/Mount-the-hard-disk-on-Linux/" data-id="cka26j16g000d9lasd57v7bvc" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/26/Mount-the-hard-disk-on-Linux/" data-id="cka28f9t00008elaswreo5cpq" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/11/26/Mount-the-hard-disk-on-Linux/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -440,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/" data-id="cka26j16j000i9las8b2onlbb" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/" data-id="cka28f9t6000gelasl38p9gex" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -488,7 +492,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/14/Mac-OS-X-10.11-problems-installing-MySQLdb/" data-id="cka26j16b000b9las04utns49" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/14/Mac-OS-X-10.11-problems-installing-MySQLdb/" data-id="cka28f9t2000belasmk2qrbsr" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/11/14/Mac-OS-X-10.11-problems-installing-MySQLdb/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -537,7 +541,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/10/27/Nginx-+-uwsgi-flask-application-deployment/" data-id="cka26j16i000g9las59ly4u36" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/10/27/Nginx-+-uwsgi-flask-application-deployment/" data-id="cka28f9t4000delas5nzk2glp" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/10/27/Nginx-+-uwsgi-flask-application-deployment/#disqus_thread" class="article-comment-link">留言</a>
       
