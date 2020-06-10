@@ -79,6 +79,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Play-with-Raspberry-Pi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/07/Play-with-Raspberry-Pi/" class="article-date">
+  <time datetime="2015-01-07T07:46:00.000Z" itemprop="datePublished">2015-01-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/07/Play-with-Raspberry-Pi/">玩转Raspberry Pi</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看到网上有很多人在玩Raspberry Pi(树莓派)，于是我也买了一个准备玩玩。关于树莓派的介绍就不多说了，想了解的自己gogole或者请戳 -&gt; <a href="http://www.raspberrypi.org/" target="_blank" rel="noopener">http://www.raspberrypi.org/</a></p>
+<p>这是我从淘宝上买的树莓派和一些相关的附件<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbglv747wj31400u04qq.jpg" alt=""><br>（一张来自2020年的配图，配件还有一块电源适配器）</p>
+<p>整个树莓派就一块很小的电路板，大小跟一张信用卡差不多。我买的是树莓派基金会最新出的Raspberry Pi B+版本，CPU是Broadcom BCM2835 700MHz ARM1176JZFS 内存：512M 4个USB接口 一个10/100 BaseT RJ45网口 一个HDMI接口 一个音频输出口 15路MPI CSI-2连接器 和 一个MicroSD卡插槽</p>
+<blockquote>
+<p>来自2020年的说明：我的这个树莓派已经是早期的型号了，现在新出的内存都已经上8GB了。</p>
+</blockquote>
+<p>给树莓派安装系统<br>1.从官网下载树莓派系统 <a href="http://www.raspberrypi.org/downloads/" target="_blank" rel="noopener">http://www.raspberrypi.org/downloads/</a> 我下载的是raspbian<br>2.下载Win32DiskImager，将raspbian系统烧录到SD卡上<br>3.将SD卡插入树莓派卡槽<br>4.将树莓派连接到路由器上面，登录路由器查看客户端列表，找到树莓派的ip，一般树莓派客户端名是raspberrypi。<br>5.使用SSH连接到树莓派，这里我是用windows自带的CMD。<br>    在CMD中输入：ssh pi@树莓派的ip，输入密码raspberry，登录到树莓派。<br>6.安装树莓派图形化界面<br>    在有网络的情况下，输入sudo apt-get install xrdp<br>7.安装完成后，使用windows自带的远程桌面连接工具，运行mstsc，打开远程桌面连接，输入树莓派的ip，再输入用户名pi和密码raspberry即可登陆到树莓派的桌面。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ggjjl1.com/2015/01/07/Play-with-Raspberry-Pi/" data-id="ckb8tn542001gxyasplmenokd" class="article-share-link">Share</a>
+      
+        <a href="http://ggjjl1.com/2015/01/07/Play-with-Raspberry-Pi/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树莓派/">树莓派</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!--
+
+-->
+
+  
     <article id="post-Python-batch-rename-the-file-name-(mainly-to-deal-with-a-lot-of-irregular-image-name)" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/01/06/Python-batch-rename-the-file-name-(mainly-to-deal-with-a-lot-of-irregular-image-name)/" class="article-date">
@@ -111,7 +161,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/01/06/Python-batch-rename-the-file-name-(mainly-to-deal-with-a-lot-of-irregular-image-name)/" data-id="ckaui2r10000fg1asr3xz9899" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/01/06/Python-batch-rename-the-file-name-(mainly-to-deal-with-a-lot-of-irregular-image-name)/" data-id="ckb8tn536000dxyast0h3qjo6" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/01/06/Python-batch-rename-the-file-name-(mainly-to-deal-with-a-lot-of-irregular-image-name)/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -163,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/01/06/Windows-batch-command/" data-id="ckaui2r26001vg1asthukb1t3" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/01/06/Windows-batch-command/" data-id="ckb8tn53r0013xyasxzqropxy" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/01/06/Windows-batch-command/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -212,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/01/03/Hackintoshing-Yosemite-in-XPS-l502x-(installed-on-the-dell-XPS-l502x-black-apple)/" data-id="ckaui2r0r0004g1asbvjbwqqi" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/01/03/Hackintoshing-Yosemite-in-XPS-l502x-(installed-on-the-dell-XPS-l502x-black-apple)/" data-id="ckb8tn52p0001xyasqw9dvhnc" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/01/03/Hackintoshing-Yosemite-in-XPS-l502x-(installed-on-the-dell-XPS-l502x-black-apple)/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -256,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/01/01/At-the-beginning-of-the-Linux-kernel-compilation-experience/" data-id="ckaui2r0w000ag1asostjnzhr" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/01/01/At-the-beginning-of-the-Linux-kernel-compilation-experience/" data-id="ckb8tn52l0000xyaso948mlix" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/01/01/At-the-beginning-of-the-Linux-kernel-compilation-experience/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -303,7 +353,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2014/12/28/One-of-the-SDL-study-notes/" data-id="ckaui2r0y000cg1askrvjtn61" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2014/12/28/One-of-the-SDL-study-notes/" data-id="ckb8tn535000bxyask78lw0ku" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2014/12/28/One-of-the-SDL-study-notes/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -349,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2014/12/21/VSFTPD-installation-configuration/" data-id="ckaui2r27001wg1as6ur98r5a" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2014/12/21/VSFTPD-installation-configuration/" data-id="ckb8tn53p000zxyas4568iswl" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2014/12/21/VSFTPD-installation-configuration/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -403,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2014/12/20/Setup-a-mail-server-on-Linux/" data-id="ckaui2r1j000yg1astd4nm5kv" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2014/12/20/Setup-a-mail-server-on-Linux/" data-id="ckb8tn53f000lxyasob9eoiwa" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2014/12/20/Setup-a-mail-server-on-Linux/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -447,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2014/12/20/After-writing-a-blog-in-this-place/" data-id="ckaui2r0p0003g1asi2bzh4ob" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2014/12/20/After-writing-a-blog-in-this-place/" data-id="ckb8tn543001jxyaszrms40yp" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2014/12/20/After-writing-a-blog-in-this-place/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -498,7 +548,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a></li></ul>
     </div>
   </div>
 
@@ -509,6 +559,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/06/10/sorting-algorithm/">常用的排序算法</a>
+          </li>
         
           <li>
             <a href="/2018/01/13/rename-with-shell/">使用shell批量更改文件名</a>
@@ -524,10 +578,6 @@
         
           <li>
             <a href="/2016/03/13/Start-using-packages/">开始使用OpenSUSE</a>
-          </li>
-        
-          <li>
-            <a href="/2016/03/06/Installing-MySQLdb-under-Mac/">Mac 下安装 MySQLdb</a>
           </li>
         
       </ul>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ggjjl1.com/"/>
-  <updated>2020-05-11T11:15:42.130Z</updated>
+  <updated>2020-06-10T03:56:32.357Z</updated>
   <id>http://ggjjl1.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常用的排序算法</title>
+    <link href="http://ggjjl1.com/2020/06/10/sorting-algorithm/"/>
+    <id>http://ggjjl1.com/2020/06/10/sorting-algorithm/</id>
+    <published>2020-06-10T03:51:46.000Z</published>
+    <updated>2020-06-10T03:56:32.357Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="冒泡排序（Bubble-Sort）"><a href="#冒泡排序（Bubble-Sort）" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(nums))<span class="number">-1</span>:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, len(nums)<span class="number">-1</span>-i):</span><br><span class="line">            <span class="keyword">if</span> nums[j] &gt; nums[j+<span class="number">1</span>]:</span><br><span class="line">                nums[j], nums[j+<span class="number">1</span>] = nums[j+<span class="number">1</span>], nums[j]</span><br></pre></td></tr></table></figure><h3 id="快速排序（Quick-Sort）"><a href="#快速排序（Quick-Sort）" class="headerlink" title="快速排序（Quick Sort）"></a>快速排序（Quick Sort）</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;冒泡排序（Bubble-Sort）&quot;&gt;&lt;a href=&quot;#冒泡排序（Bubble-Sort）&quot; class=&quot;headerlink&quot; title=&quot;冒泡排序（Bubble Sort）&quot;&gt;&lt;/a&gt;冒泡排序（Bubble Sort）&lt;/h3&gt;&lt;figure class
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>使用shell批量更改文件名</title>
@@ -140,9 +162,9 @@
     
     
     
-      <category term="MySQL" scheme="http://ggjjl1.com/tags/MySQL/"/>
-    
       <category term="编译" scheme="http://ggjjl1.com/tags/%E7%BC%96%E8%AF%91/"/>
+    
+      <category term="MySQL" scheme="http://ggjjl1.com/tags/MySQL/"/>
     
   </entry>
   
@@ -474,32 +496,6 @@
       <category term="Python" scheme="http://ggjjl1.com/tags/Python/"/>
     
       <category term="Sublime Text" scheme="http://ggjjl1.com/tags/Sublime-Text/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>玩转Raspberry Pi</title>
-    <link href="http://ggjjl1.com/2015/01/07/Play-with-Raspberry-Pi/"/>
-    <id>http://ggjjl1.com/2015/01/07/Play-with-Raspberry-Pi/</id>
-    <published>2015-01-07T07:46:00.000Z</published>
-    <updated>2020-05-31T03:19:55.482Z</updated>
-    
-    <content type="html"><![CDATA[<p>看到网上有很多人在玩Raspberry Pi(树莓派)，于是我也买了一个准备玩玩。关于树莓派的介绍就不多说了，想了解的自己gogole或者请戳 -&gt; <a href="http://www.raspberrypi.org/" target="_blank" rel="noopener">http://www.raspberrypi.org/</a></p><p>这是我从淘宝上买的树莓派和一些相关的附件<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbglv747wj31400u04qq.jpg" alt=""><br>（一张来自2020年的配图，配件还有一块电源适配器）</p><p>整个树莓派就一块很小的电路板，大小跟一张信用卡差不多。我买的是树莓派基金会最新出的Raspberry Pi B+版本，CPU是Broadcom BCM2835 700MHz ARM1176JZFS 内存：512M 4个USB接口 一个10/100 BaseT RJ45网口 一个HDMI接口 一个音频输出口 15路MPI CSI-2连接器 和 一个MicroSD卡插槽</p><blockquote><p>来自2020年的说明：我的这个树莓派已经是早期的型号了，现在新出的内存都已经上8GB了。</p></blockquote><p>给树莓派安装系统<br>1.从官网下载树莓派系统 <a href="http://www.raspberrypi.org/downloads/" target="_blank" rel="noopener">http://www.raspberrypi.org/downloads/</a> 我下载的是raspbian<br>2.下载Win32DiskImager，将raspbian系统烧录到SD卡上<br>3.将SD卡插入树莓派卡槽<br>4.将树莓派连接到路由器上面，登录路由器查看客户端列表，找到树莓派的ip，一般树莓派客户端名是raspberrypi。<br>5.使用SSH连接到树莓派，这里我是用windows自带的CMD。<br>    在CMD中输入：ssh pi@树莓派的ip，输入密码raspberry，登录到树莓派。<br>6.安装树莓派图形化界面<br>    在有网络的情况下，输入sudo apt-get install xrdp<br>7.安装完成后，使用windows自带的远程桌面连接工具，运行mstsc，打开远程桌面连接，输入树莓派的ip，再输入用户名pi和密码raspberry即可登陆到树莓派的桌面。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;看到网上有很多人在玩Raspberry Pi(树莓派)，于是我也买了一个准备玩玩。关于树莓派的介绍就不多说了，想了解的自己gogole或者请戳 -&amp;gt; &lt;a href=&quot;http://www.raspberrypi.org/&quot; target=&quot;_blank&quot; rel=&quot;
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Linux" scheme="http://ggjjl1.com/tags/Linux/"/>
-    
-      <category term="树莓派" scheme="http://ggjjl1.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
     
   </entry>
   
