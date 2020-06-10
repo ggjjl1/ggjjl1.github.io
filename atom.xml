@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ggjjl1.com/"/>
-  <updated>2020-06-10T03:56:32.357Z</updated>
+  <updated>2020-06-10T06:57:21.767Z</updated>
   <id>http://ggjjl1.com/</id>
   
   <author>
@@ -21,20 +21,25 @@
     <link href="http://ggjjl1.com/2020/06/10/sorting-algorithm/"/>
     <id>http://ggjjl1.com/2020/06/10/sorting-algorithm/</id>
     <published>2020-06-10T03:51:46.000Z</published>
-    <updated>2020-06-10T03:56:32.357Z</updated>
+    <updated>2020-06-10T06:57:21.767Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="冒泡排序（Bubble-Sort）"><a href="#冒泡排序（Bubble-Sort）" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(nums))<span class="number">-1</span>:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, len(nums)<span class="number">-1</span>-i):</span><br><span class="line">            <span class="keyword">if</span> nums[j] &gt; nums[j+<span class="number">1</span>]:</span><br><span class="line">                nums[j], nums[j+<span class="number">1</span>] = nums[j+<span class="number">1</span>], nums[j]</span><br></pre></td></tr></table></figure><h3 id="快速排序（Quick-Sort）"><a href="#快速排序（Quick-Sort）" class="headerlink" title="快速排序（Quick Sort）"></a>快速排序（Quick Sort）</h3>]]></content>
+    <content type="html"><![CDATA[<p>最近在leetcode上刷题，顺便写一篇文章记录下，编程中经常能用到的几种排序算法。</p><h3 id="冒泡排序（Bubble-Sort）"><a href="#冒泡排序（Bubble-Sort）" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(nums)<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, len(nums)<span class="number">-1</span>-i):</span><br><span class="line">            <span class="keyword">if</span> nums[j] &gt; nums[j+<span class="number">1</span>]:</span><br><span class="line">                nums[j], nums[j+<span class="number">1</span>] = nums[j+<span class="number">1</span>], nums[j]</span><br></pre></td></tr></table></figure><h3 id="快速排序（Quick-Sort）"><a href="#快速排序（Quick-Sort）" class="headerlink" title="快速排序（Quick Sort）"></a>快速排序（Quick Sort）</h3><p>快速排序，又称分区交换排序，简称快排，是对冒泡排序的一种改进。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(nums, low, high)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> low &gt;= high: <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    pivot = nums[low]  <span class="comment"># 选数列第一个元素作为"基准"</span></span><br><span class="line">    i, j = low, high</span><br><span class="line">    <span class="keyword">while</span> i &lt; j:</span><br><span class="line">        <span class="keyword">while</span> i &lt; j <span class="keyword">and</span> nums[j] &gt;= pivot:</span><br><span class="line">            j = j - <span class="number">1</span></span><br><span class="line">        nums[i] = nums[j]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> i &lt; j <span class="keyword">and</span> nums[i] &lt;= pivot:</span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line">        nums[j] = nums[i]</span><br><span class="line">    nums[i] = pivot</span><br><span class="line"></span><br><span class="line">    quick_sort(nums, low, i<span class="number">-1</span>)</span><br><span class="line">    quick_sort(nums, i+<span class="number">1</span>, high)</span><br></pre></td></tr></table></figure></p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>[1] 《数据结构（C语言版）》——严蔚敏、吴伟民<br>[2] <a href="https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F</a><br>[3] <a href="https://blog.csdn.net/wthfeng/article/details/78037228" target="_blank" rel="noopener">https://blog.csdn.net/wthfeng/article/details/78037228</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;冒泡排序（Bubble-Sort）&quot;&gt;&lt;a href=&quot;#冒泡排序（Bubble-Sort）&quot; class=&quot;headerlink&quot; title=&quot;冒泡排序（Bubble Sort）&quot;&gt;&lt;/a&gt;冒泡排序（Bubble Sort）&lt;/h3&gt;&lt;figure class
+        &lt;p&gt;最近在leetcode上刷题，顺便写一篇文章记录下，编程中经常能用到的几种排序算法。&lt;/p&gt;
+&lt;h3 id=&quot;冒泡排序（Bubble-Sort）&quot;&gt;&lt;a href=&quot;#冒泡排序（Bubble-Sort）&quot; class=&quot;headerlink&quot; title=&quot;冒泡排序（Bub
       
     
     </summary>
     
     
+    
+      <category term="Python" scheme="http://ggjjl1.com/tags/Python/"/>
+    
+      <category term="算法&amp;数据结构" scheme="http://ggjjl1.com/tags/%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -162,9 +167,9 @@
     
     
     
-      <category term="编译" scheme="http://ggjjl1.com/tags/%E7%BC%96%E8%AF%91/"/>
-    
       <category term="MySQL" scheme="http://ggjjl1.com/tags/MySQL/"/>
+    
+      <category term="编译" scheme="http://ggjjl1.com/tags/%E7%BC%96%E8%AF%91/"/>
     
   </entry>
   

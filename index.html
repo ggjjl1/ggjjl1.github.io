@@ -101,16 +101,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="冒泡排序（Bubble-Sort）"><a href="#冒泡排序（Bubble-Sort）" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(nums))<span class="number">-1</span>:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, len(nums)<span class="number">-1</span>-i):</span><br><span class="line">            <span class="keyword">if</span> nums[j] &gt; nums[j+<span class="number">1</span>]:</span><br><span class="line">                nums[j], nums[j+<span class="number">1</span>] = nums[j+<span class="number">1</span>], nums[j]</span><br></pre></td></tr></table></figure>
-<h3 id="快速排序（Quick-Sort）"><a href="#快速排序（Quick-Sort）" class="headerlink" title="快速排序（Quick Sort）"></a>快速排序（Quick Sort）</h3>
+        <p>最近在leetcode上刷题，顺便写一篇文章记录下，编程中经常能用到的几种排序算法。</p>
+<h3 id="冒泡排序（Bubble-Sort）"><a href="#冒泡排序（Bubble-Sort）" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(nums)<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, len(nums)<span class="number">-1</span>-i):</span><br><span class="line">            <span class="keyword">if</span> nums[j] &gt; nums[j+<span class="number">1</span>]:</span><br><span class="line">                nums[j], nums[j+<span class="number">1</span>] = nums[j+<span class="number">1</span>], nums[j]</span><br></pre></td></tr></table></figure>
+<h3 id="快速排序（Quick-Sort）"><a href="#快速排序（Quick-Sort）" class="headerlink" title="快速排序（Quick Sort）"></a>快速排序（Quick Sort）</h3><p>快速排序，又称分区交换排序，简称快排，是对冒泡排序的一种改进。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(nums, low, high)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> low &gt;= high: <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    pivot = nums[low]  <span class="comment"># 选数列第一个元素作为"基准"</span></span><br><span class="line">    i, j = low, high</span><br><span class="line">    <span class="keyword">while</span> i &lt; j:</span><br><span class="line">        <span class="keyword">while</span> i &lt; j <span class="keyword">and</span> nums[j] &gt;= pivot:</span><br><span class="line">            j = j - <span class="number">1</span></span><br><span class="line">        nums[i] = nums[j]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> i &lt; j <span class="keyword">and</span> nums[i] &lt;= pivot:</span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line">        nums[j] = nums[i]</span><br><span class="line">    nums[i] = pivot</span><br><span class="line"></span><br><span class="line">    quick_sort(nums, low, i<span class="number">-1</span>)</span><br><span class="line">    quick_sort(nums, i+<span class="number">1</span>, high)</span><br></pre></td></tr></table></figure></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>[1] 《数据结构（C语言版）》——严蔚敏、吴伟民<br>[2] <a href="https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F</a><br>[3] <a href="https://blog.csdn.net/wthfeng/article/details/78037228" target="_blank" rel="noopener">https://blog.csdn.net/wthfeng/article/details/78037228</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2020/06/10/sorting-algorithm/" data-id="ckb8tn53y001axyasve6ke3zd" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2020/06/10/sorting-algorithm/" data-id="ckb903mwb001dirasiv9jyq4k" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2020/06/10/sorting-algorithm/#disqus_thread" class="article-comment-link">留言</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法-数据结构/">算法&数据结构</a></li></ul>
+
     </footer>
   </div>
   
@@ -151,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2018/01/13/rename-with-shell/" data-id="ckb8tn53v0016xyasmgvtqp46" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2018/01/13/rename-with-shell/" data-id="ckb903mwe001iirasmuc63030" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2018/01/13/rename-with-shell/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -205,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2016/08/12/Some-operator-of-set-of-scala/" data-id="ckb8tn53h000nxyasvxks2bf8" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2016/08/12/Some-operator-of-set-of-scala/" data-id="ckb903mvy000wirasrgnf0whp" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2016/08/12/Some-operator-of-set-of-scala/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -249,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/" data-id="ckb8tn53c000hxyas4hfd8nb4" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/" data-id="ckb903mvr000oiras62qdwrxi" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -294,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2016/03/13/Start-using-packages/" data-id="ckb8tn53j000qxyaslskt691c" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2016/03/13/Start-using-packages/" data-id="ckb903mvz000zirasdkn0cheu" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2016/03/13/Start-using-packages/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -341,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2016/03/06/Installing-MySQLdb-under-Mac/" data-id="ckb8tn52x0003xyas2ww8w3mh" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2016/03/06/Installing-MySQLdb-under-Mac/" data-id="ckb903mv50003irasuwpn2bbd" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2016/03/06/Installing-MySQLdb-under-Mac/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -387,7 +392,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/" data-id="ckb8tn53w0018xyashcoito8m" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/" data-id="ckb903mwc001firas6pt23kkt" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -440,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/26/Mount-the-hard-disk-on-Linux/" data-id="ckb8tn541001exyas1v4qb805" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/26/Mount-the-hard-disk-on-Linux/" data-id="ckb903mvd000airas13j5bmws" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/11/26/Mount-the-hard-disk-on-Linux/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -485,7 +490,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/" data-id="ckb8tn5330009xyaswl11eqic" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/" data-id="ckb903mvi000firasbc20sqqx" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -533,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/14/Mac-OS-X-10.11-problems-installing-MySQLdb/" data-id="ckb8tn5310007xyas73a6mb3z" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/14/Mac-OS-X-10.11-problems-installing-MySQLdb/" data-id="ckb903mvc0008iras2e8dc8vn" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/11/14/Mac-OS-X-10.11-problems-installing-MySQLdb/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -567,7 +572,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-OSX/">Mac OSX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenSUSE/">OpenSUSE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDL/">SDL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scala/">Scala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/">Spark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树莓派/">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译/">编译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑苹果/">黑苹果</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-OSX/">Mac OSX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenSUSE/">OpenSUSE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDL/">SDL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scala/">Scala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/">Spark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树莓派/">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法-数据结构/">算法&数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译/">编译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑苹果/">黑苹果</a></li></ul>
     </div>
   </div>
 
@@ -577,7 +582,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Mac-OSX/" style="font-size: 15px;">Mac OSX</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/OpenSUSE/" style="font-size: 10px;">OpenSUSE</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/SDL/" style="font-size: 10px;">SDL</a> <a href="/tags/Scala/" style="font-size: 10px;">Scala</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/编译/" style="font-size: 12.5px;">编译</a> <a href="/tags/黑苹果/" style="font-size: 10px;">黑苹果</a>
+      <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Mac-OSX/" style="font-size: 15px;">Mac OSX</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/OpenSUSE/" style="font-size: 10px;">OpenSUSE</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/SDL/" style="font-size: 10px;">SDL</a> <a href="/tags/Scala/" style="font-size: 10px;">Scala</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/算法-数据结构/" style="font-size: 10px;">算法&数据结构</a> <a href="/tags/编译/" style="font-size: 12.5px;">编译</a> <a href="/tags/黑苹果/" style="font-size: 10px;">黑苹果</a>
     </div>
   </div>
 
