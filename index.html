@@ -103,7 +103,7 @@
       
         <p>最近在leetcode上刷题，经常会遇到跟排序相关的题，在此顺便复习一下常用的排序算法。常用的排序算法（内部排序），按大类分可分为以下几种：插入排序、插入排序、选择排序、归并排序和计数排序五大类。下面用python代码简单实现一下这几种排序算法。</p>
 <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p><a href="https://zh.wikipedia.org/wiki/插入排序" target="_blank" rel="noopener">插入排序</a>（Insertion Sort）比较简单直观，原理是将为排序数据，在已排序序列中从后往前扫描，找到相应位置插入。</p>
-<h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insertion_sort</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(nums)):</span><br><span class="line">        j, key = i - <span class="number">1</span>, nums[i]</span><br><span class="line">        <span class="keyword">while</span> j &gt;= <span class="number">0</span> <span class="keyword">and</span> key &lt; nums[j]:</span><br><span class="line">            nums[j+<span class="number">1</span>] = nums[j]</span><br><span class="line">            j = j - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        nums[j+<span class="number">1</span>] = key</span><br></pre></td></tr></table></figure>
+<h3 id="直接插入排序（Straight-Insertion-Sort）"><a href="#直接插入排序（Straight-Insertion-Sort）" class="headerlink" title="直接插入排序（Straight Insertion Sort）"></a>直接插入排序（Straight Insertion Sort）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insertion_sort</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(nums)):</span><br><span class="line">        j, key = i - <span class="number">1</span>, nums[i]</span><br><span class="line">        <span class="keyword">while</span> j &gt;= <span class="number">0</span> <span class="keyword">and</span> key &lt; nums[j]:</span><br><span class="line">            nums[j+<span class="number">1</span>] = nums[j]</span><br><span class="line">            j = j - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        nums[j+<span class="number">1</span>] = key</span><br></pre></td></tr></table></figure>
 <h2 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h2><p>交换排序也是一种非常基础的算法，主要包含冒泡排序和快速排序。</p>
 <h3 id="冒泡排序（Bubble-Sort）"><a href="#冒泡排序（Bubble-Sort）" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(nums)<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, len(nums)<span class="number">-1</span>-i):</span><br><span class="line">            <span class="keyword">if</span> nums[j] &gt; nums[j+<span class="number">1</span>]:</span><br><span class="line">                nums[j], nums[j+<span class="number">1</span>] = nums[j+<span class="number">1</span>], nums[j]</span><br></pre></td></tr></table></figure>
 <h3 id="快速排序（Quick-Sort）"><a href="#快速排序（Quick-Sort）" class="headerlink" title="快速排序（Quick Sort）"></a>快速排序（Quick Sort）</h3><p>快速排序，又称分区交换排序，简称快排，是对冒泡排序的一种改进。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(nums, low, high)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> low &gt;= high: <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    pivot = nums[low]  <span class="comment"># 选数列第一个元素作为"基准"</span></span><br><span class="line">    i, j = low, high</span><br><span class="line">    <span class="keyword">while</span> i &lt; j:</span><br><span class="line">        <span class="keyword">while</span> i &lt; j <span class="keyword">and</span> nums[j] &gt;= pivot:</span><br><span class="line">            j = j - <span class="number">1</span></span><br><span class="line">        nums[i] = nums[j]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> i &lt; j <span class="keyword">and</span> nums[i] &lt;= pivot:</span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line">        nums[j] = nums[i]</span><br><span class="line">    nums[i] = pivot</span><br><span class="line"></span><br><span class="line">    quick_sort(nums, low, i<span class="number">-1</span>)</span><br><span class="line">    quick_sort(nums, i+<span class="number">1</span>, high)</span><br></pre></td></tr></table></figure></p>
@@ -116,7 +116,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2020/06/10/sorting-algorithm/" data-id="ckbabsbzp001eqwas6rr1rg4h" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2020/06/10/sorting-algorithm/" data-id="ckbac5135001itwastjyaxe3w" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2020/06/10/sorting-algorithm/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -163,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2018/01/13/rename-with-shell/" data-id="ckbabsbzq001gqwase6p1pln9" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2018/01/13/rename-with-shell/" data-id="ckbac5131001dtwaskzy7ciby" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2018/01/13/rename-with-shell/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -217,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2016/08/12/Some-operator-of-set-of-scala/" data-id="ckbabsbzb000rqwas3cf8lrjh" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2016/08/12/Some-operator-of-set-of-scala/" data-id="ckbac512o000utwasrljggdtt" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2016/08/12/Some-operator-of-set-of-scala/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -261,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/" data-id="ckbabsbz9000pqwasyq27vae2" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/" data-id="ckbac512j000otwasa22ux7ln" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -306,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2016/03/13/Start-using-packages/" data-id="ckbabsbze000wqwas1htwimw8" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2016/03/13/Start-using-packages/" data-id="ckbac512p000wtwasgpbhlcqj" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2016/03/13/Start-using-packages/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -353,7 +353,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2016/03/06/Installing-MySQLdb-under-Mac/" data-id="ckbabsbyk0001qwasdc8sxwez" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2016/03/06/Installing-MySQLdb-under-Mac/" data-id="ckbac51210004twasbv1gi5xm" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2016/03/06/Installing-MySQLdb-under-Mac/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -399,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/" data-id="ckbabsbzr001iqwasu0kmgb0z" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/" data-id="ckbac5133001ftwasxhmni89o" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -452,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/26/Mount-the-hard-disk-on-Linux/" data-id="ckbabsbyx000bqwasmjfqvhfq" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/26/Mount-the-hard-disk-on-Linux/" data-id="ckbac51260008twas8k33iesp" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/11/26/Mount-the-hard-disk-on-Linux/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -497,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/" data-id="ckbabsbz2000gqwashl3cu46l" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/" data-id="ckbac512a000ctwas5dt3hn4f" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -545,7 +545,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2015/11/14/Mac-OS-X-10.11-problems-installing-MySQLdb/" data-id="ckbabsbyz000dqwasnafidddv" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2015/11/14/Mac-OS-X-10.11-problems-installing-MySQLdb/" data-id="ckbac51240007twasbxl125dg" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2015/11/14/Mac-OS-X-10.11-problems-installing-MySQLdb/#disqus_thread" class="article-comment-link">留言</a>
       
