@@ -5,18 +5,18 @@
   
   <title>常用的排序算法 | ggjjl1&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近在leetcode上刷题，经常会遇到跟排序相关的题，在此顺便复习一下常用的排序算法。常用的排序算法（内部排序），按大类分可分为以下几种：插入排序、插入排序、选择排序、归并排序和计数排序五大类。下面用python代码简单实现一下这几种排序算法。 插入排序插入排序（Insertion Sort）比较简单直观，原理是将为排序数据，在已排序序列中从后往前扫描，找到相应位置插入。 直接插入排序（Stra">
+  <meta name="description" content="最近在leetcode上刷题，想回顾一下计算机编程的基本功排序。常用的排序算法（内部排序），按大类分可分为以下几种：插入排序、交换排序、选择排序、归并排序和计数排序五大类。下面用python代码简单实现一下这几种排序算法。 插入排序插入排序（Insertion Sort）比较简单直观，原理是将为排序数据，在已排序序列中从后往前扫描，找到相应位置插入。 直接插入排序（Straight Inserti">
 <meta name="keywords" content="Python,算法&amp;数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用的排序算法">
 <meta property="og:url" content="http://ggjjl1.com/2020/06/10/sorting-algorithm/index.html">
 <meta property="og:site_name" content="ggjjl1&#39;blog">
-<meta property="og:description" content="最近在leetcode上刷题，经常会遇到跟排序相关的题，在此顺便复习一下常用的排序算法。常用的排序算法（内部排序），按大类分可分为以下几种：插入排序、插入排序、选择排序、归并排序和计数排序五大类。下面用python代码简单实现一下这几种排序算法。 插入排序插入排序（Insertion Sort）比较简单直观，原理是将为排序数据，在已排序序列中从后往前扫描，找到相应位置插入。 直接插入排序（Stra">
+<meta property="og:description" content="最近在leetcode上刷题，想回顾一下计算机编程的基本功排序。常用的排序算法（内部排序），按大类分可分为以下几种：插入排序、交换排序、选择排序、归并排序和计数排序五大类。下面用python代码简单实现一下这几种排序算法。 插入排序插入排序（Insertion Sort）比较简单直观，原理是将为排序数据，在已排序序列中从后往前扫描，找到相应位置插入。 直接插入排序（Straight Inserti">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-11T05:21:58.958Z">
+<meta property="og:updated_time" content="2020-06-11T06:49:08.732Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用的排序算法">
-<meta name="twitter:description" content="最近在leetcode上刷题，经常会遇到跟排序相关的题，在此顺便复习一下常用的排序算法。常用的排序算法（内部排序），按大类分可分为以下几种：插入排序、插入排序、选择排序、归并排序和计数排序五大类。下面用python代码简单实现一下这几种排序算法。 插入排序插入排序（Insertion Sort）比较简单直观，原理是将为排序数据，在已排序序列中从后往前扫描，找到相应位置插入。 直接插入排序（Stra">
+<meta name="twitter:description" content="最近在leetcode上刷题，想回顾一下计算机编程的基本功排序。常用的排序算法（内部排序），按大类分可分为以下几种：插入排序、交换排序、选择排序、归并排序和计数排序五大类。下面用python代码简单实现一下这几种排序算法。 插入排序插入排序（Insertion Sort）比较简单直观，原理是将为排序数据，在已排序序列中从后往前扫描，找到相应位置插入。 直接插入排序（Straight Inserti">
   
     <link rel="alternate" href="/atom.xml" title="ggjjl1&#39;blog" type="application/atom+xml">
   
@@ -104,7 +104,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近在leetcode上刷题，经常会遇到跟排序相关的题，在此顺便复习一下常用的排序算法。常用的排序算法（内部排序），按大类分可分为以下几种：插入排序、插入排序、选择排序、归并排序和计数排序五大类。下面用python代码简单实现一下这几种排序算法。</p>
+        <p>最近在leetcode上刷题，想回顾一下计算机编程的基本功排序。常用的排序算法（内部排序），按大类分可分为以下几种：插入排序、交换排序、选择排序、归并排序和计数排序五大类。下面用python代码简单实现一下这几种排序算法。</p>
 <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p><a href="https://zh.wikipedia.org/wiki/插入排序" target="_blank" rel="noopener">插入排序</a>（Insertion Sort）比较简单直观，原理是将为排序数据，在已排序序列中从后往前扫描，找到相应位置插入。</p>
 <h3 id="直接插入排序（Straight-Insertion-Sort）"><a href="#直接插入排序（Straight-Insertion-Sort）" class="headerlink" title="直接插入排序（Straight Insertion Sort）"></a>直接插入排序（Straight Insertion Sort）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insertion_sort</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(nums)):</span><br><span class="line">        j, key = i - <span class="number">1</span>, nums[i]</span><br><span class="line">        <span class="keyword">while</span> j &gt;= <span class="number">0</span> <span class="keyword">and</span> key &lt; nums[j]:</span><br><span class="line">            nums[j+<span class="number">1</span>] = nums[j]</span><br><span class="line">            j = j - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        nums[j+<span class="number">1</span>] = key</span><br></pre></td></tr></table></figure>
 <h2 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h2><p>交换排序也是一种非常基础的算法，主要包含冒泡排序和快速排序。</p>
@@ -119,7 +119,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ggjjl1.com/2020/06/10/sorting-algorithm/" data-id="ckbac5135001itwastjyaxe3w" class="article-share-link">Share</a>
+      <a data-url="http://ggjjl1.com/2020/06/10/sorting-algorithm/" data-id="ckbaf98t0001g4jasr5tkusj0" class="article-share-link">Share</a>
       
         <a href="http://ggjjl1.com/2020/06/10/sorting-algorithm/#disqus_thread" class="article-comment-link">留言</a>
       
