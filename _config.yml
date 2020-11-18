@@ -77,13 +77,15 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: rsync
-  host: gaojunliang.cn
-  user: root
-  port: 22
-  delete: true
-  verbose: true
-  ignore_errors: false
+  type: git
+  repo: git@github.com:ggjjl1/ggjjl1.github.io.git
+  branch: master
 
-# disqus的名称
+# Comment System
 disqus_shortname: ggjjl1
+
+# Feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
