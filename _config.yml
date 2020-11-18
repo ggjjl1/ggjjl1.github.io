@@ -78,9 +78,12 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: rsync
-  host: 39.104.88.213
+  host: gaojunliang.cn
   user: root
   port: 22
   delete: true
   verbose: true
   ignore_errors: false
+
+# disqus的名称
+disqus_shortname: ggjjl1
