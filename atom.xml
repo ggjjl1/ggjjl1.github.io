@@ -369,6 +369,32 @@
   </entry>
   
   <entry>
+    <title>linux删除当前目录及子目录下所有*.xx文件</title>
+    <link href="http://ggjjl1.com/2015/06/10/Linux-to-delete-the-current-directory-and-subdirectory-all-%EF%80%AA.-Xx-files/"/>
+    <id>http://ggjjl1.com/2015/06/10/Linux-to-delete-the-current-directory-and-subdirectory-all-%EF%80%AA.-Xx-files/</id>
+    <published>2015-06-10T10:04:56.000Z</published>
+    <updated>2020-11-18T10:27:42.381Z</updated>
+    
+    <content type="html"><![CDATA[<p>尝试了下用rm -rf *.xx的方式不行。</p><p>上网查了下需要用到组合命令：<br>find . -name “*.xx” -exec rm -rf {} \;</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;尝试了下用rm -rf *.xx的方式不行。&lt;/p&gt;
+&lt;p&gt;上网查了下需要用到组合命令：&lt;br&gt;find . -name “*.xx” -exec rm -rf {} \;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Linux" scheme="http://ggjjl1.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>WebSocket实现客户端服务器之间数据传输</title>
     <link href="http://ggjjl1.com/2015/04/25/WebSocket-data-transmission-between-the-client-server/"/>
     <id>http://ggjjl1.com/2015/04/25/WebSocket-data-transmission-between-the-client-server/</id>
@@ -475,32 +501,6 @@
     
     
       <category term="Python" scheme="http://ggjjl1.com/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配置Sublime Text2下Python的build system</title>
-    <link href="http://ggjjl1.com/2015/01/19/Under-the-configuration-Sublime-does-Text2-Python-build-system/"/>
-    <id>http://ggjjl1.com/2015/01/19/Under-the-configuration-Sublime-does-Text2-Python-build-system/</id>
-    <published>2015-01-19T14:24:28.000Z</published>
-    <updated>2018-01-14T13:20:42.465Z</updated>
-    
-    <content type="html"><![CDATA[<p>1.找到并点击Preferences-&gt;Browse Packages… 在打开的文件夹中找到python，打开这个文件夹，找到并打开文件python.sublime-build<br>2.添加修改文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;cmd&quot;: [&quot;python&quot;, &quot;-u&quot;, &quot;$file&quot;],</span><br><span class="line">&quot;path&quot;:&quot;D:/Python27&quot;,</span><br><span class="line">&quot;file_regex&quot;: &quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;,</span><br><span class="line">&quot;selector&quot;: &quot;source.python&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>添加python安装目录的path路径，保存退出。<br>Ctrl+B运行python代码</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1.找到并点击Preferences-&amp;gt;Browse Packages… 在打开的文件夹中找到python，打开这个文件夹，找到并打开文件python.sublime-build&lt;br&gt;2.添加修改文件：&lt;br&gt;&lt;figure class=&quot;highlight pla
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Python" scheme="http://ggjjl1.com/tags/Python/"/>
-    
-      <category term="Sublime Text" scheme="http://ggjjl1.com/tags/Sublime-Text/"/>
     
   </entry>
   
