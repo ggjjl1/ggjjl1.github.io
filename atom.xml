@@ -71,8 +71,8 @@
   
   <entry>
     <title>Scala 中几种常用集合操作符</title>
-    <link href="http://ggjjl1.com/2016/08/12/Some-operator-of-set-of-scala/"/>
-    <id>http://ggjjl1.com/2016/08/12/Some-operator-of-set-of-scala/</id>
+    <link href="http://ggjjl1.com/2016/08/12/scala-data-set/"/>
+    <id>http://ggjjl1.com/2016/08/12/scala-data-set/</id>
     <published>2016-08-12T11:55:41.000Z</published>
     <updated>2018-01-14T13:20:42.464Z</updated>
     
@@ -96,8 +96,8 @@
   
   <entry>
     <title>使用 Spark SQL 读取 Hive 上的数据</title>
-    <link href="http://ggjjl1.com/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/"/>
-    <id>http://ggjjl1.com/2016/04/20/Reading-data-from-Hive-by-Using-SparkSQL/</id>
+    <link href="http://ggjjl1.com/2016/04/20/reading-data-from-hive-using-sparksql/"/>
+    <id>http://ggjjl1.com/2016/04/20/reading-data-from-hive-using-sparksql/</id>
     <published>2016-04-20T08:18:20.000Z</published>
     <updated>2018-01-14T13:20:42.463Z</updated>
     
@@ -121,8 +121,8 @@
   
   <entry>
     <title>开始使用OpenSUSE</title>
-    <link href="http://ggjjl1.com/2016/03/13/Start-using-packages/"/>
-    <id>http://ggjjl1.com/2016/03/13/Start-using-packages/</id>
+    <link href="http://ggjjl1.com/2016/03/13/using-package/"/>
+    <id>http://ggjjl1.com/2016/03/13/using-package/</id>
     <published>2016-03-13T04:16:02.000Z</published>
     <updated>2018-01-14T13:20:42.465Z</updated>
     
@@ -148,8 +148,8 @@
   
   <entry>
     <title>Mac 下安装 MySQLdb</title>
-    <link href="http://ggjjl1.com/2016/03/06/Installing-MySQLdb-under-Mac/"/>
-    <id>http://ggjjl1.com/2016/03/06/Installing-MySQLdb-under-Mac/</id>
+    <link href="http://ggjjl1.com/2016/03/06/installing-mysqldb-on-mac/"/>
+    <id>http://ggjjl1.com/2016/03/06/installing-mysqldb-on-mac/</id>
     <published>2016-03-05T16:13:12.000Z</published>
     <updated>2018-01-14T13:20:42.461Z</updated>
     
@@ -197,8 +197,8 @@
   
   <entry>
     <title>在 Linux 上挂载硬盘</title>
-    <link href="http://ggjjl1.com/2015/11/26/Mount-the-hard-disk-on-Linux/"/>
-    <id>http://ggjjl1.com/2015/11/26/Mount-the-hard-disk-on-Linux/</id>
+    <link href="http://ggjjl1.com/2015/11/26/mount-hard-driver-on-linux/"/>
+    <id>http://ggjjl1.com/2015/11/26/mount-hard-driver-on-linux/</id>
     <published>2015-11-26T06:21:00.000Z</published>
     <updated>2018-01-14T13:20:42.462Z</updated>
     
@@ -221,8 +221,8 @@
   
   <entry>
     <title>在 Mac 上配置 Hadoop-2.6.2 和 Hive-1.2.1 遇到问题</title>
-    <link href="http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/"/>
-    <id>http://ggjjl1.com/2015/11/25/On-the-Mac-configuration-Hadoop---2.6.2-and-Hive---1.2.1-encounter-problems/</id>
+    <link href="http://ggjjl1.com/2015/11/25/configuring-hadoop-and-hive-on-mac/"/>
+    <id>http://ggjjl1.com/2015/11/25/configuring-hadoop-and-hive-on-mac/</id>
     <published>2015-11-25T04:08:27.000Z</published>
     <updated>2018-01-14T13:20:42.463Z</updated>
     
@@ -245,8 +245,8 @@
   
   <entry>
     <title>Mac OS X 10.11 上安装 MySQLdb 出现问题</title>
-    <link href="http://ggjjl1.com/2015/11/14/Mac-OS-X-10.11-problems-installing-MySQLdb/"/>
-    <id>http://ggjjl1.com/2015/11/14/Mac-OS-X-10.11-problems-installing-MySQLdb/</id>
+    <link href="http://ggjjl1.com/2015/11/14/installing-mysqldb-on-macosx-10.11/"/>
+    <id>http://ggjjl1.com/2015/11/14/installing-mysqldb-on-macosx-10.11/</id>
     <published>2015-11-14T08:39:00.000Z</published>
     <updated>2018-01-14T13:20:42.462Z</updated>
     
@@ -269,8 +269,8 @@
   
   <entry>
     <title>Nginx+uwsgi部署flask应用</title>
-    <link href="http://ggjjl1.com/2015/10/27/Nginx-+-uwsgi-flask-application-deployment/"/>
-    <id>http://ggjjl1.com/2015/10/27/Nginx-+-uwsgi-flask-application-deployment/</id>
+    <link href="http://ggjjl1.com/2015/10/27/deploy-flask-application-with-nginx-and-uwsgi/"/>
+    <id>http://ggjjl1.com/2015/10/27/deploy-flask-application-with-nginx-and-uwsgi/</id>
     <published>2015-10-27T12:19:00.000Z</published>
     <updated>2018-01-14T13:20:42.462Z</updated>
     
@@ -298,8 +298,8 @@
   
   <entry>
     <title>vps性能测试</title>
-    <link href="http://ggjjl1.com/2015/08/08/VPS-performance-test/"/>
-    <id>http://ggjjl1.com/2015/08/08/VPS-performance-test/</id>
+    <link href="http://ggjjl1.com/2015/08/08/vps-performance-test/"/>
+    <id>http://ggjjl1.com/2015/08/08/vps-performance-test/</id>
     <published>2015-08-08T13:41:03.000Z</published>
     <updated>2018-01-14T13:20:42.465Z</updated>
     
@@ -321,8 +321,8 @@
   
   <entry>
     <title>l2tp+ipsec方式配置vpn服务</title>
-    <link href="http://ggjjl1.com/2015/07/30/L2tp-+-ipsec-configuration-VPN-service/"/>
-    <id>http://ggjjl1.com/2015/07/30/L2tp-+-ipsec-configuration-VPN-service/</id>
+    <link href="http://ggjjl1.com/2015/07/30/configuring-l2tp-vpn/"/>
+    <id>http://ggjjl1.com/2015/07/30/configuring-l2tp-vpn/</id>
     <published>2015-07-30T12:42:27.000Z</published>
     <updated>2018-01-14T13:20:42.461Z</updated>
     
@@ -343,37 +343,11 @@
   </entry>
   
   <entry>
-    <title>linux删除当前目录及子目录下所有*.xx文件</title>
-    <link href="http://ggjjl1.com/2015/06/10/Linux-to-delete-the-current-directory-and-subdirectory-all-*.-Xx-files/"/>
-    <id>http://ggjjl1.com/2015/06/10/Linux-to-delete-the-current-directory-and-subdirectory-all-*.-Xx-files/</id>
+    <title>linux删除当前目录及子目录下所有\*.xx文件</title>
+    <link href="http://ggjjl1.com/2015/06/10/delete-recursive-direcotry-on-linux/"/>
+    <id>http://ggjjl1.com/2015/06/10/delete-recursive-direcotry-on-linux/</id>
     <published>2015-06-10T10:04:56.000Z</published>
-    <updated>2018-01-14T13:20:42.461Z</updated>
-    
-    <content type="html"><![CDATA[<p>尝试了下用rm -rf *.xx的方式不行。</p><p>上网查了下需要用到组合命令：<br>find . -name “*.xx” -exec rm -rf {} \;</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;尝试了下用rm -rf *.xx的方式不行。&lt;/p&gt;
-&lt;p&gt;上网查了下需要用到组合命令：&lt;br&gt;find . -name “*.xx” -exec rm -rf {} \;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Linux" scheme="http://ggjjl1.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux删除当前目录及子目录下所有*.xx文件</title>
-    <link href="http://ggjjl1.com/2015/06/10/Linux-to-delete-the-current-directory-and-subdirectory-all-%EF%80%AA.-Xx-files/"/>
-    <id>http://ggjjl1.com/2015/06/10/Linux-to-delete-the-current-directory-and-subdirectory-all-%EF%80%AA.-Xx-files/</id>
-    <published>2015-06-10T10:04:56.000Z</published>
-    <updated>2020-11-18T10:27:42.381Z</updated>
+    <updated>2021-01-22T15:39:43.044Z</updated>
     
     <content type="html"><![CDATA[<p>尝试了下用rm -rf *.xx的方式不行。</p><p>上网查了下需要用到组合命令：<br>find . -name “*.xx” -exec rm -rf {} \;</p>]]></content>
     
@@ -396,8 +370,8 @@
   
   <entry>
     <title>WebSocket实现客户端服务器之间数据传输</title>
-    <link href="http://ggjjl1.com/2015/04/25/WebSocket-data-transmission-between-the-client-server/"/>
-    <id>http://ggjjl1.com/2015/04/25/WebSocket-data-transmission-between-the-client-server/</id>
+    <link href="http://ggjjl1.com/2015/04/25/websocket-technology/"/>
+    <id>http://ggjjl1.com/2015/04/25/websocket-technology/</id>
     <published>2015-04-24T16:02:28.000Z</published>
     <updated>2018-01-14T13:20:42.466Z</updated>
     
@@ -411,8 +385,8 @@
   
   <entry>
     <title>Xshell在python shell中退格键变^H问题解决</title>
-    <link href="http://ggjjl1.com/2015/04/06/Xshell-backspace-key-variable-in-the-python-shell-^-H-problem-solving/"/>
-    <id>http://ggjjl1.com/2015/04/06/Xshell-backspace-key-variable-in-the-python-shell-^-H-problem-solving/</id>
+    <link href="http://ggjjl1.com/2015/04/06/xshell-backspace-problem/"/>
+    <id>http://ggjjl1.com/2015/04/06/xshell-backspace-problem/</id>
     <published>2015-04-06T09:24:00.000Z</published>
     <updated>2018-01-14T13:20:42.467Z</updated>
     
@@ -433,8 +407,8 @@
   
   <entry>
     <title>正则表达式</title>
-    <link href="http://ggjjl1.com/2015/03/27/Regular-expressions/"/>
-    <id>http://ggjjl1.com/2015/03/27/Regular-expressions/</id>
+    <link href="http://ggjjl1.com/2015/03/27/regular-expression/"/>
+    <id>http://ggjjl1.com/2015/03/27/regular-expression/</id>
     <published>2015-03-27T12:41:14.000Z</published>
     <updated>2018-01-14T13:20:42.464Z</updated>
     
@@ -456,8 +430,8 @@
   
   <entry>
     <title>linux下配置VPN</title>
-    <link href="http://ggjjl1.com/2015/03/16/Under-Linux-configuration-VPN/"/>
-    <id>http://ggjjl1.com/2015/03/16/Under-Linux-configuration-VPN/</id>
+    <link href="http://ggjjl1.com/2015/03/16/configuring-vpn-on-linux/"/>
+    <id>http://ggjjl1.com/2015/03/16/configuring-vpn-on-linux/</id>
     <published>2015-03-16T08:53:00.000Z</published>
     <updated>2018-01-14T13:20:42.465Z</updated>
     
@@ -482,8 +456,8 @@
   
   <entry>
     <title>Python笔记</title>
-    <link href="http://ggjjl1.com/2015/03/11/Python-notes/"/>
-    <id>http://ggjjl1.com/2015/03/11/Python-notes/</id>
+    <link href="http://ggjjl1.com/2015/03/11/python-notes/"/>
+    <id>http://ggjjl1.com/2015/03/11/python-notes/</id>
     <published>2015-03-11T04:15:00.000Z</published>
     <updated>2018-01-14T13:20:42.463Z</updated>
     
@@ -501,6 +475,32 @@
     
     
       <category term="Python" scheme="http://ggjjl1.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配置Sublime Text2下Python的build system</title>
+    <link href="http://ggjjl1.com/2015/01/19/configuring-sublimetext-with-python/"/>
+    <id>http://ggjjl1.com/2015/01/19/configuring-sublimetext-with-python/</id>
+    <published>2015-01-19T14:24:28.000Z</published>
+    <updated>2018-01-14T13:20:42.465Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.找到并点击Preferences-&gt;Browse Packages… 在打开的文件夹中找到python，打开这个文件夹，找到并打开文件python.sublime-build<br>2.添加修改文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;cmd&quot;: [&quot;python&quot;, &quot;-u&quot;, &quot;$file&quot;],</span><br><span class="line">&quot;path&quot;:&quot;D:/Python27&quot;,</span><br><span class="line">&quot;file_regex&quot;: &quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;,</span><br><span class="line">&quot;selector&quot;: &quot;source.python&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>添加python安装目录的path路径，保存退出。<br>Ctrl+B运行python代码</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1.找到并点击Preferences-&amp;gt;Browse Packages… 在打开的文件夹中找到python，打开这个文件夹，找到并打开文件python.sublime-build&lt;br&gt;2.添加修改文件：&lt;br&gt;&lt;figure class=&quot;highlight pla
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="http://ggjjl1.com/tags/Python/"/>
+    
+      <category term="Sublime Text" scheme="http://ggjjl1.com/tags/Sublime-Text/"/>
     
   </entry>
   
