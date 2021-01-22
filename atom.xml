@@ -37,9 +37,9 @@
     
     
     
-      <category term="算法&amp;数据结构" scheme="http://ggjjl1.com/tags/%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="Python" scheme="http://ggjjl1.com/tags/Python/"/>
+    
+      <category term="算法&amp;数据结构" scheme="http://ggjjl1.com/tags/%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -297,29 +297,6 @@
   </entry>
   
   <entry>
-    <title>vps性能测试</title>
-    <link href="http://ggjjl1.com/2015/08/08/vps-performance-test/"/>
-    <id>http://ggjjl1.com/2015/08/08/vps-performance-test/</id>
-    <published>2015-08-08T13:41:03.000Z</published>
-    <updated>2018-01-14T13:20:42.465Z</updated>
-    
-    <content type="html"><![CDATA[<p>主要包含以下测试项目：<br>1.cpu<br>2.内存<br>3.磁盘读写<br>4.网络上传下载</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;主要包含以下测试项目：&lt;br&gt;1.cpu&lt;br&gt;2.内存&lt;br&gt;3.磁盘读写&lt;br&gt;4.网络上传下载&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>l2tp+ipsec方式配置vpn服务</title>
     <link href="http://ggjjl1.com/2015/07/30/configuring-l2tp-vpn/"/>
     <id>http://ggjjl1.com/2015/07/30/configuring-l2tp-vpn/</id>
@@ -501,6 +478,32 @@
       <category term="Python" scheme="http://ggjjl1.com/tags/Python/"/>
     
       <category term="Sublime Text" scheme="http://ggjjl1.com/tags/Sublime-Text/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>玩转树莓派</title>
+    <link href="http://ggjjl1.com/2015/01/07/play-with-raspberry-pi/"/>
+    <id>http://ggjjl1.com/2015/01/07/play-with-raspberry-pi/</id>
+    <published>2015-01-07T07:46:00.000Z</published>
+    <updated>2021-01-10T06:29:06.975Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>看到网上有很多人在玩Raspberry Pi(树莓派)，于是我也买了一个准备玩玩。关于树莓派的介绍就不多说了，想了解的自己gogole或者请戳 -&gt; <a href="http://www.raspberrypi.org/" target="_blank" rel="noopener">http://www.raspberrypi.org/</a></p><p>这是我从淘宝上买的树莓派和一些相关的附件<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbglv747wj31400u04qq.jpg" alt=""><br>（一张来自2020年的配图，配件还有一块电源适配器）</p><p>整个树莓派就一块很小的电路板，大小跟一张信用卡差不多。我买的是树莓派基金会最新出的Raspberry Pi B+版本，CPU是Broadcom BCM2835 700MHz ARM1176JZFS 内存：512M 4个USB接口 一个10/100 BaseT RJ45网口 一个HDMI接口 一个音频输出口 15路MPI CSI-2连接器 和 一个MicroSD卡插槽</p><blockquote><p>来自2020年的说明：我的这个树莓派已经是早期的型号了，现在新出的内存都已经上8GB了。</p></blockquote><h3 id="给树莓派安装系统"><a href="#给树莓派安装系统" class="headerlink" title="给树莓派安装系统"></a>给树莓派安装系统</h3><ol><li>从官网下载树莓派系统 <a href="http://www.raspberrypi.org/downloads/" target="_blank" rel="noopener">http://www.raspberrypi.org/downloads/</a> 我下载的是raspbian</li><li>下载Win32DiskImager，将raspbian系统烧录到SD卡上</li><li>将SD卡插入树莓派卡槽</li><li>将树莓派连接到路由器上面，登录路由器查看客户端列表，找到树莓派的ip，一般树莓派客户端名是raspberrypi。</li><li>使用SSH连接到树莓派，这里我是用windows自带的CMD。<br><code>在CMD中输入：ssh pi@树莓派的ip，输入密码raspberry，登录到树莓派。</code></li><li>安装树莓派图形化界面<br><code>在有网络的情况下，输入sudo apt-get install xrdp</code></li><li>安装完成后，使用windows自带的远程桌面连接工具，运行mstsc，打开远程桌面连接，输入树莓派的ip，再输入用户名pi和密码raspberry即可登陆到树莓派的桌面。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;看到网上有很多人在玩Raspberry Pi(树莓派)，于是我也买了一个准备玩玩。关于树莓派的介绍就不多说了，想了解的自己gogole或者请
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Linux" scheme="http://ggjjl1.com/tags/Linux/"/>
+    
+      <category term="树莓派" scheme="http://ggjjl1.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
     
   </entry>
   
