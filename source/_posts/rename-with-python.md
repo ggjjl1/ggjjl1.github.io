@@ -1,5 +1,5 @@
 ---
-title: python批量重命名文件名（主要是用来处理一大堆不规则照片名）
+title: 使用 Python 批量重命名文件名
 date: 2015-01-06 22:49:00
 tags: [Python]
 ---
@@ -9,9 +9,13 @@ tags: [Python]
 
 好了，说了这么多废话，终于要来重头戏了。接好！
 ```
-    # -*- coding: utf-8 -*-
-    import os, sys, string
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import os
+import sys
+import string
 
+if __name__ == '__main__':
     srcfiles = os.listdir('.')
     for srcfile in srcfiles:
         filename, suffix = os.path.splitext(srcfile)
