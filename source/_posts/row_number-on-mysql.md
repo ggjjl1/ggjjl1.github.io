@@ -12,6 +12,7 @@ MySQL的统计函数比较稀缺，很多经典的统计函数如row_number这�
 | 1   | 100    |
 | 2   | 200    |
 | 3   | 300    |
+
 代码如下：
 ```sql
 SET @row_number = 0;
@@ -22,6 +23,7 @@ FROM
     employee
 LIMIT 10;
 ```
+
 也可以这样写：
 ```sql
 SELECT 
@@ -30,6 +32,6 @@ FROM
     employee,(SELECT @row_number:=0) AS t
 LIMIT 10;
 ```
+
 参考文章：
-[https://segmentfault.com/a/1190000004566152][1]
-[1]:https://segmentfault.com/a/1190000004566152
+[https://segmentfault.com/a/1190000004566152](https://segmentfault.com/a/1190000004566152)
