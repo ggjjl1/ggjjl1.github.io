@@ -1,9 +1,9 @@
 ---
 title: Mac OS X 10.11 上安装 MySQLdb 出现问题
 date: 2015-11-14 16:39:00
-tags: [Mac OSX]
+tags: [Mac OSX,MySQLdb,]
 ---
-**问题描述：**
+### 问题描述
 更新Mac OS X 10.11后安装MySQLdb，进入ipython交互命令后，输入import MySQLdb  
 ```
     In [1]: import MySQLdb
@@ -24,10 +24,10 @@ tags: [Mac OSX]
       Reason: image not found
 ```
 
-**问题原因：**
+### 问题原因
 由于EI Capitan 增加了System Integrity Protection 的功能，阻止了写入的操作的，默认是开启的，需要关闭。
 
-**解决办法：**
+### 解决办法
 重启电脑，开机时按住 cmd + R，进入 Recovery 模式。然后打开终端工具 ，输入命令：`csrutil disable`，然后再次重启电脑。
 重启后，打开terminal输入以下命令：
 ```
@@ -37,5 +37,8 @@ tags: [Mac OSX]
 ```
     ln: /usr/lib/libmysqlclient.18.dylib: Operation not permitted
 ```
-**引用：**
+
+### 参考资料
 [http://segmentfault.com/q/1010000003026543](http://segmentfault.com/q/1010000003026543)
+[http://blog.csdn.net/janronehoo/article/details/25207825](http://blog.csdn.net/janronehoo/article/details/25207825)
+[http://stackoverflow.com/questions/10557507/rails-mysql-on-osx-library-not-loaded-libmysqlclient-18-dylib](http://stackoverflow.com/questions/10557507/rails-mysql-on-osx-library-not-loaded-libmysqlclient-18-dylib)
