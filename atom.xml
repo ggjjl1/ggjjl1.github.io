@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ggjjl1.com/"/>
-  <updated>2020-07-08T14:17:21.778Z</updated>
+  <updated>2021-02-06T15:29:25.824Z</updated>
   <id>http://ggjjl1.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Linux上安装编译Python3</title>
+    <link href="http://ggjjl1.com/2021/02/06/installing-python3-on-linux/"/>
+    <id>http://ggjjl1.com/2021/02/06/installing-python3-on-linux/</id>
+    <published>2021-02-06T15:25:22.000Z</published>
+    <updated>2021-02-06T15:29:25.824Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h3><p>CentOS 7.4<br>Python 3.9.1 可以去官网下载发行包 <a href="https://www.python.org/downloads/release/python-391/" target="_blank" rel="noopener">https://www.python.org/downloads/release/python-391/</a></p><h3 id="编译工具"><a href="#编译工具" class="headerlink" title="编译工具"></a>编译工具</h3><p>在编译Python的时候，需要安装一些必要的模块。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zlib zlib-devel</span><br><span class="line">yum -y install bzip2 bzip2-devel</span><br><span class="line">yum -y install ncurses ncurses-devel</span><br><span class="line">yum -y install readline readline-devel</span><br><span class="line">yum -y install openssl openssl-devel</span><br><span class="line">yum -y install openssl-static</span><br><span class="line">yum -y install xz lzma xz-devel</span><br><span class="line">yum -y install sqlite sqlite-devel</span><br><span class="line">yum -y install gdbm gdbm-devel</span><br><span class="line">yum -y install tk tk-devel</span><br><span class="line">yum -y install libffi libffi-devel</span><br></pre></td></tr></table></figure></p><h3 id="编译Python3"><a href="#编译Python3" class="headerlink" title="编译Python3"></a>编译Python3</h3><p>解压Python-3.9.1源码包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf Python-3.9.1.tar.gz</span><br></pre></td></tr></table></figure></p><p>进入目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd Python-3.9.1</span><br></pre></td></tr></table></figure></p><p>配置编译，设置安装目录，以及选择相应的模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/python3 \</span><br><span class="line">    --enable-shared CFLAGS=-fPIC \</span><br><span class="line">    LDFLAGS=-Wl,-rpath=/usr/local/openssl/lib:/usr/python3/lib \</span><br><span class="line">    --with-openssl=/usr/local/openssl</span><br></pre></td></tr></table></figure></p><p>编译安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line"></span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p><h3 id="创建软连接"><a href="#创建软连接" class="headerlink" title="创建软连接"></a>创建软连接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/python3/bin/python3 /usr/bin/python3</span><br><span class="line">ln -s /usr/python3/bin/pip3 /usr/bin/pip3</span><br></pre></td></tr></table></figure><p>安装完成。</p><p><strong>参考</strong><br><a href="https://www.cnblogs.com/freeweb/p/5181764.html" target="_blank" rel="noopener">https://www.cnblogs.com/freeweb/p/5181764.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;系统环境&quot;&gt;&lt;a href=&quot;#系统环境&quot; class=&quot;headerlink&quot; title=&quot;系统环境&quot;&gt;&lt;/a&gt;系统环境&lt;/h3&gt;&lt;p&gt;CentOS 7.4&lt;br&gt;Python 3.9.1 可以去官网下载发行包 &lt;a href=&quot;https://www.pyt
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Linux" scheme="http://ggjjl1.com/tags/Linux/"/>
+    
+      <category term="Python" scheme="http://ggjjl1.com/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>常用的排序算法</title>
@@ -37,9 +63,9 @@
     
     
     
-      <category term="Python" scheme="http://ggjjl1.com/tags/Python/"/>
-    
       <category term="算法&amp;数据结构" scheme="http://ggjjl1.com/tags/%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="Python" scheme="http://ggjjl1.com/tags/Python/"/>
     
   </entry>
   
@@ -71,10 +97,10 @@
   
   <entry>
     <title>Scala 中几种常用集合操作符</title>
-    <link href="http://ggjjl1.com/2016/08/12/scala-data-set/"/>
-    <id>http://ggjjl1.com/2016/08/12/scala-data-set/</id>
+    <link href="http://ggjjl1.com/2016/08/12/scala-data-structure/"/>
+    <id>http://ggjjl1.com/2016/08/12/scala-data-structure/</id>
     <published>2016-08-12T11:55:41.000Z</published>
-    <updated>2018-01-14T13:20:42.464Z</updated>
+    <updated>2021-01-23T11:44:09.691Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Scala-中的几种常用的集合操作符"><a href="#Scala-中的几种常用的集合操作符" class="headerlink" title="Scala 中的几种常用的集合操作符"></a>Scala 中的几种常用的集合操作符</h3><ul><li>::</li><li>:+/+:</li><li>++</li><li>:::</li></ul><h3 id="几种操作符的说明以及用法"><a href="#几种操作符的说明以及用法" class="headerlink" title="几种操作符的说明以及用法"></a>几种操作符的说明以及用法</h3><p>一、::<br>两个冒号，表示往一个集合的头部添加元素，构造一个新的集合。x::list 表示往 list 队列的头部添加元素 x<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//创建一个List</span><br><span class="line">scala&gt; val list = List(1,2)</span><br><span class="line">list: List[Int] = List(1, 2)</span><br><span class="line"></span><br><span class="line">//创建不变量x</span><br><span class="line">scala&gt; val x = 3</span><br><span class="line">x: Int = 3</span><br><span class="line"></span><br><span class="line">//将x插入到list头部</span><br><span class="line">scala&gt; x::list</span><br><span class="line">res16: List[Int] = List(3, 1, 2)</span><br><span class="line"></span><br><span class="line">// :: 的另一种使用形式</span><br><span class="line">scala&gt; list.::(x)</span><br><span class="line">res17: List[Int] = List(3, 1, 2)</span><br></pre></td></tr></table></figure></p><p>二、:+ 和 +:<br>冒号和加和组合的操作符，冒号在左边和冒号在右边的区别是分别是：1. list:+x 在集合尾部添加元素；2. x+:list在集合头部添加元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//将x插入到list尾部</span><br><span class="line">scala&gt; list:+x</span><br><span class="line">res18: List[Int] = List(1, 2, 3)</span><br><span class="line"></span><br><span class="line">//将x插入到list头部</span><br><span class="line">scala&gt; x+:list</span><br><span class="line">res19: List[Int] = List(3, 1, 2)</span><br><span class="line"></span><br><span class="line">//也可以这样使用</span><br><span class="line">scala&gt; list.+:(x)</span><br><span class="line">res20: List[Int] = List(3, 1, 2)</span><br><span class="line"></span><br><span class="line">scala&gt; list.:+(x)</span><br><span class="line">res21: List[Int] = List(1, 2, 3)</span><br><span class="line"></span><br><span class="line">//创建一个 Seq 类型集合</span><br><span class="line">scala&gt; val seq = Seq(1, 2, 3)</span><br><span class="line">seq: Seq[Int] = List(1, 2, 3)</span><br><span class="line"></span><br><span class="line">//seq调用 :+</span><br><span class="line">scala&gt; seq.:+(5)</span><br><span class="line">res29: Seq[Int] = List(1, 2, 3, 5)</span><br></pre></td></tr></table></figure></p><p>其中 +: 和 :: 类似，但是 :: 可以用于 pattern match，而 +： 不支持。</p><p>三、++<br>两个加号，表示连接两个集合。例如，list++list1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; list1</span><br><span class="line">res25: List[Int] = List(3, 4)</span><br><span class="line"></span><br><span class="line">//list 加上 list1 中的元素</span><br><span class="line">scala&gt; list++list1</span><br><span class="line">res26: List[Int] = List(1, 2, 3, 4)</span><br><span class="line"></span><br><span class="line">//list1 加上 list 中的元素</span><br><span class="line">scala&gt; list1++list</span><br><span class="line">res27: List[Int] = List(3, 4, 1, 2)</span><br></pre></td></tr></table></figure></p><p>四、:::<br>三个冒号，表示连接两个 List 类型的集合。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//创建seq1</span><br><span class="line">scala&gt; val seq1 = Seq(4, 5)</span><br><span class="line">seq1: Seq[Int] = List(4, 5)</span><br><span class="line"></span><br><span class="line">//seq调用 ::: 去连接seq1，报错</span><br><span class="line">scala&gt; seq:::seq1</span><br><span class="line">&lt;console&gt;:10: error: value ::: is not a member of Seq[Int]</span><br><span class="line">              seq:::seq1</span><br><span class="line">                 ^</span><br><span class="line"></span><br><span class="line">//::: 只能用于连接两个 List 类型的集合</span><br><span class="line">scala&gt; list:::list1</span><br><span class="line">res31: List[Int] = List(1, 2, 3, 4)</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -121,10 +147,10 @@
   
   <entry>
     <title>开始使用OpenSUSE</title>
-    <link href="http://ggjjl1.com/2016/03/13/using-package/"/>
-    <id>http://ggjjl1.com/2016/03/13/using-package/</id>
+    <link href="http://ggjjl1.com/2016/03/13/using-opensuse/"/>
+    <id>http://ggjjl1.com/2016/03/13/using-opensuse/</id>
     <published>2016-03-13T04:16:02.000Z</published>
-    <updated>2018-01-14T13:20:42.465Z</updated>
+    <updated>2021-01-23T11:44:09.691Z</updated>
     
     <content type="html"><![CDATA[<p>【前言】<br>之前一直在用Ubuntu和CentOS，最近看到github上有位大神强烈推荐OpenSUSE这个系统。于是，顺着一直想找个新的Linux发行版玩玩的想法，搭上了openSUSE的这般顺风车。</p><p>【开始】<br>上openSUSE的官网下载了最新的版本，openSUSE leap 42.1。这里我并不了解这个版本号的意义，也不清楚openSUSE的上一个版本是多少。直接下载了最新的稳定版42.1，开始了openSUSE的征程！</p>]]></content>
     
@@ -147,40 +173,13 @@
   </entry>
   
   <entry>
-    <title>Mac 下安装 MySQLdb</title>
-    <link href="http://ggjjl1.com/2016/03/06/installing-mysqldb-on-mac/"/>
-    <id>http://ggjjl1.com/2016/03/06/installing-mysqldb-on-mac/</id>
-    <published>2016-03-05T16:13:12.000Z</published>
-    <updated>2018-01-14T13:20:42.461Z</updated>
-    
-    <content type="html"><![CDATA[<p>环境<br>系统版本: Mac OS X EI Caption (version 10.11.1)<br>Python 版本: 2.7.10<br>virtualenv (14.0.6)</p><p>问题<br>安装 MySQLdb 出现 mysql_config not found<br>解决以上问题后，又出现 Reason: image not found<br>通过以下命令可以解决该问题<br>sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib<br>但是，执行这条命令后又会出现 ln: /usr/lib/libmysqlclient.18.dylib: Operation not permitted<br>这个问题。</p><p>最后，找到 stackoverflow 上给出的解决方案。<br>执行一下命令，即可解决问题。<br>/usr/local/mysql/lib/libmysqlclient.18.dylib /usr/local/lib/libmysqlclient.18.dylib</p><p>参考文章：<br><a href="http://blog.csdn.net/janronehoo/article/details/25207825" target="_blank" rel="noopener">http://blog.csdn.net/janronehoo/article/details/25207825</a><br><a href="http://stackoverflow.com/questions/10557507/rails-mysql-on-osx-library-not-loaded-libmysqlclient-18-dylib" target="_blank" rel="noopener">http://stackoverflow.com/questions/10557507/rails-mysql-on-osx-library-not-loaded-libmysqlclient-18-dylib</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;环境&lt;br&gt;系统版本: Mac OS X EI Caption (version 10.11.1)&lt;br&gt;Python 版本: 2.7.10&lt;br&gt;virtualenv (14.0.6)&lt;/p&gt;
-&lt;p&gt;问题&lt;br&gt;安装 MySQLdb 出现 mysql_config not
-      
-    
-    </summary>
-    
-    
-    
-      <category term="编译" scheme="http://ggjjl1.com/tags/%E7%BC%96%E8%AF%91/"/>
-    
-      <category term="MySQL" scheme="http://ggjjl1.com/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>如何在MySQL中实现row_number函数</title>
-    <link href="http://ggjjl1.com/2015/11/29/row_number-in-MySQL/"/>
-    <id>http://ggjjl1.com/2015/11/29/row_number-in-MySQL/</id>
+    <link href="http://ggjjl1.com/2015/11/29/row_number-on-mysql/"/>
+    <id>http://ggjjl1.com/2015/11/29/row_number-on-mysql/</id>
     <published>2015-11-29T08:22:16.000Z</published>
-    <updated>2020-05-11T09:03:55.119Z</updated>
+    <updated>2021-01-23T11:44:09.689Z</updated>
     
-    <content type="html"><![CDATA[<p>很久之前给自己挖的坑，现在来把它补完。<br>MySQL的统计函数比较稀缺，很多经典的统计函数如row_number这样的函数在MySQL是没有的，不确定最新版本会不会增加。<br>为了实现这个功能，需要在查询中启用临时变量。<br>比如对这张Employee表加上行号：<br>| Id  | Salary |<br>| :– | :—– |<br>| 1   | 100    |<br>| 2   | 200    |<br>| 3   | 300    |<br>代码如下：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> @row_number = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    (@row_number:=@row_number + <span class="number">1</span>) <span class="keyword">AS</span> <span class="keyword">num</span>, <span class="keyword">id</span>, salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employee</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure></p><p>也可以这样写：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    (@row_number:=@row_number + <span class="number">1</span>) <span class="keyword">AS</span> <span class="keyword">num</span>, <span class="keyword">id</span>, salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employee,(<span class="keyword">SELECT</span> @row_number:=<span class="number">0</span>) <span class="keyword">AS</span> t</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure></p><p>参考文章：<br><a href="https://segmentfault.com/a/1190000004566152" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004566152</a></p>]]></content>
+    <content type="html"><![CDATA[<p>很久之前给自己挖的坑，现在来把它补完。<br>MySQL的统计函数比较稀缺，很多经典的统计函数如row_number这样的函数在MySQL是没有的，不确定最新版本会不会增加。<br>为了实现这个功能，需要在查询中启用临时变量。<br>比如对这张Employee表加上行号：<br>| Id  | Salary |<br>| :– | :—– |<br>| 1   | 100    |<br>| 2   | 200    |<br>| 3   | 300    |</p><p>代码如下：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> @row_number = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    (@row_number:=@row_number + <span class="number">1</span>) <span class="keyword">AS</span> <span class="keyword">num</span>, <span class="keyword">id</span>, salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employee</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure></p><p>也可以这样写：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    (@row_number:=@row_number + <span class="number">1</span>) <span class="keyword">AS</span> <span class="keyword">num</span>, <span class="keyword">id</span>, salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employee,(<span class="keyword">SELECT</span> @row_number:=<span class="number">0</span>) <span class="keyword">AS</span> t</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure></p><p>参考文章：<br><a href="https://segmentfault.com/a/1190000004566152" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004566152</a></p>]]></content>
     
     <summary type="html">
     
@@ -192,6 +191,8 @@
     </summary>
     
     
+    
+      <category term="MySQL" scheme="http://ggjjl1.com/tags/MySQL/"/>
     
   </entry>
   
@@ -224,7 +225,7 @@
     <link href="http://ggjjl1.com/2015/11/25/configuring-hadoop-and-hive-on-mac/"/>
     <id>http://ggjjl1.com/2015/11/25/configuring-hadoop-and-hive-on-mac/</id>
     <published>2015-11-25T04:08:27.000Z</published>
-    <updated>2018-01-14T13:20:42.463Z</updated>
+    <updated>2021-01-23T11:44:09.687Z</updated>
     
     <content type="html"><![CDATA[<p>问题描述：<br>在 Mac 上安装配置完 Hadoop-2.6.2 后，再安装 Hive-1.2.1 并启动，出现以下错误信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">gjl: ~/bin/apache-hive-1.2.1-bin $bin/hive</span><br><span class="line"></span><br><span class="line">Logging initialized using configuration in jar:file:/Users/gaojunliang/bin/apache-hive-1.2.1-bin/lib/hive-common-1.2.1.jar!/hive-log4j.properties</span><br><span class="line">[ERROR] Terminal initialization failed; falling back to unsupported</span><br><span class="line">java.lang.IncompatibleClassChangeError: Found class jline.Terminal, but interface was expected</span><br><span class="line">    at jline.TerminalFactory.create(TerminalFactory.java:101)</span><br><span class="line">    at jline.TerminalFactory.get(TerminalFactory.java:158)</span><br><span class="line">    at jline.console.ConsoleReader.&lt;init&gt;(ConsoleReader.java:229)</span><br><span class="line">    at jline.console.ConsoleReader.&lt;init&gt;(ConsoleReader.java:221)</span><br><span class="line">    at jline.console.ConsoleReader.&lt;init&gt;(ConsoleReader.java:209)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.setupConsoleReader(CliDriver.java:787)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:721)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:681)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:621)</span><br><span class="line">    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span><br><span class="line">    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)</span><br><span class="line">    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</span><br><span class="line">    at java.lang.reflect.Method.invoke(Method.java:606)</span><br><span class="line">    at org.apache.hadoop.util.RunJar.run(RunJar.java:221)</span><br><span class="line">    at org.apache.hadoop.util.RunJar.main(RunJar.java:136)</span><br><span class="line"></span><br><span class="line">Exception in thread &quot;main&quot; java.lang.IncompatibleClassChangeError: Found class jline.Terminal, but interface was expected</span><br><span class="line">    at jline.console.ConsoleReader.&lt;init&gt;(ConsoleReader.java:230)</span><br><span class="line">    at jline.console.ConsoleReader.&lt;init&gt;(ConsoleReader.java:221)</span><br><span class="line">    at jline.console.ConsoleReader.&lt;init&gt;(ConsoleReader.java:209)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.setupConsoleReader(CliDriver.java:787)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:721)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:681)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:621)</span><br><span class="line">    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span><br><span class="line">    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)</span><br><span class="line">    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</span><br><span class="line">    at java.lang.reflect.Method.invoke(Method.java:606)</span><br><span class="line">    at org.apache.hadoop.util.RunJar.run(RunJar.java:221)</span><br><span class="line">    at org.apache.hadoop.util.RunJar.main(RunJar.java:136)</span><br></pre></td></tr></table></figure></p><p>解决办法：<br>将 Hive 中的 jline 从 2.x 版本降级到 1.x 之后，将 Hadoop 中 share/hadoop/yarn/lib 目录下的 jline 升级到 2.x 版本。</p>]]></content>
     
@@ -241,22 +242,26 @@
     
       <category term="Mac OSX" scheme="http://ggjjl1.com/tags/Mac-OSX/"/>
     
+      <category term="hadoop" scheme="http://ggjjl1.com/tags/hadoop/"/>
+    
+      <category term="hive" scheme="http://ggjjl1.com/tags/hive/"/>
+    
   </entry>
   
   <entry>
     <title>Mac OS X 10.11 上安装 MySQLdb 出现问题</title>
-    <link href="http://ggjjl1.com/2015/11/14/installing-mysqldb-on-macosx-10.11/"/>
-    <id>http://ggjjl1.com/2015/11/14/installing-mysqldb-on-macosx-10.11/</id>
+    <link href="http://ggjjl1.com/2015/11/14/installing-mysqldb-on-macos/"/>
+    <id>http://ggjjl1.com/2015/11/14/installing-mysqldb-on-macos/</id>
     <published>2015-11-14T08:39:00.000Z</published>
-    <updated>2018-01-14T13:20:42.462Z</updated>
+    <updated>2021-01-23T11:44:09.687Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>问题描述：</strong><br>更新Mac OS X 10.11后安装MySQLdb，进入ipython交互命令后，输入import MySQLdb<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">In [1]: import MySQLdb</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">ImportError                               Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input-1-dd22983d5391&gt; in &lt;module&gt;()</span><br><span class="line">----&gt; 1 import MySQLdb</span><br><span class="line"></span><br><span class="line">/Library/Python/2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-intel.egg/MySQLdb/__init__.py in &lt;module&gt;()</span><br><span class="line">     17 from MySQLdb.release import __version__, version_info, __author__</span><br><span class="line">     18 </span><br><span class="line">---&gt; 19 import _mysql</span><br><span class="line">     20 </span><br><span class="line">     21 if version_info != _mysql.version_info:</span><br><span class="line"></span><br><span class="line">ImportError: dlopen(/Library/Python/2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-intel.egg/_mysql.so, 2): Library not loaded: libmysqlclient.18.dylib</span><br><span class="line">  Referenced from: /Library/Python/2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-intel.egg/_mysql.so</span><br><span class="line">  Reason: image not found</span><br></pre></td></tr></table></figure></p><p><strong>问题原因：</strong><br>由于EI Capitan 增加了System Integrity Protection 的功能，阻止了写入的操作的，默认是开启的，需要关闭。</p><p><strong>解决办法：</strong><br>重启电脑，开机时按住 cmd + R，进入 Recovery 模式。然后打开终端工具 ，输入命令：<code>csrutil disable</code>，然后再次重启电脑。<br>重启后，打开terminal输入以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib</span><br></pre></td></tr></table></figure></p><p>如果不关闭写入操作，将会出现以下情况：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln: /usr/lib/libmysqlclient.18.dylib: Operation not permitted</span><br></pre></td></tr></table></figure></p><p><strong>引用：</strong><br><a href="http://segmentfault.com/q/1010000003026543" target="_blank" rel="noopener">http://segmentfault.com/q/1010000003026543</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>更新Mac OS X 10.11后安装MySQLdb，进入ipython交互命令后，输入import MySQLdb<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">In [1]: import MySQLdb</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">ImportError                               Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input-1-dd22983d5391&gt; in &lt;module&gt;()</span><br><span class="line">----&gt; 1 import MySQLdb</span><br><span class="line"></span><br><span class="line">/Library/Python/2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-intel.egg/MySQLdb/__init__.py in &lt;module&gt;()</span><br><span class="line">     17 from MySQLdb.release import __version__, version_info, __author__</span><br><span class="line">     18 </span><br><span class="line">---&gt; 19 import _mysql</span><br><span class="line">     20 </span><br><span class="line">     21 if version_info != _mysql.version_info:</span><br><span class="line"></span><br><span class="line">ImportError: dlopen(/Library/Python/2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-intel.egg/_mysql.so, 2): Library not loaded: libmysqlclient.18.dylib</span><br><span class="line">  Referenced from: /Library/Python/2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-intel.egg/_mysql.so</span><br><span class="line">  Reason: image not found</span><br></pre></td></tr></table></figure></p><h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>由于EI Capitan 增加了System Integrity Protection 的功能，阻止了写入的操作的，默认是开启的，需要关闭。</p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>重启电脑，开机时按住 cmd + R，进入 Recovery 模式。然后打开终端工具 ，输入命令：<code>csrutil disable</code>，然后再次重启电脑。<br>重启后，打开terminal输入以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib</span><br></pre></td></tr></table></figure></p><p>如果不关闭写入操作，将会出现以下情况：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln: /usr/lib/libmysqlclient.18.dylib: Operation not permitted</span><br></pre></td></tr></table></figure></p><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://segmentfault.com/q/1010000003026543" target="_blank" rel="noopener">http://segmentfault.com/q/1010000003026543</a><br><a href="http://blog.csdn.net/janronehoo/article/details/25207825" target="_blank" rel="noopener">http://blog.csdn.net/janronehoo/article/details/25207825</a><br><a href="http://stackoverflow.com/questions/10557507/rails-mysql-on-osx-library-not-loaded-libmysqlclient-18-dylib" target="_blank" rel="noopener">http://stackoverflow.com/questions/10557507/rails-mysql-on-osx-library-not-loaded-libmysqlclient-18-dylib</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;strong&gt;问题描述：&lt;/strong&gt;&lt;br&gt;更新Mac OS X 10.11后安装MySQLdb，进入ipython交互命令后，输入import MySQLdb&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
+        &lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;更新Mac OS X 10.11后安装MySQLdb，进入ipython交互命令后，输入import MySQLdb&lt;br&gt;
       
     
     </summary>
@@ -264,6 +269,8 @@
     
     
       <category term="Mac OSX" scheme="http://ggjjl1.com/tags/Mac-OSX/"/>
+    
+      <category term="MySQLdb" scheme="http://ggjjl1.com/tags/MySQLdb/"/>
     
   </entry>
   
@@ -436,9 +443,9 @@
     <link href="http://ggjjl1.com/2015/03/11/python-notes/"/>
     <id>http://ggjjl1.com/2015/03/11/python-notes/</id>
     <published>2015-03-11T04:15:00.000Z</published>
-    <updated>2018-01-14T13:20:42.463Z</updated>
+    <updated>2021-01-23T11:44:09.688Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1-input-和raw-input-的区别？"><a href="#1-input-和raw-input-的区别？" class="headerlink" title="1.input()和raw_input()的区别？"></a>1.input()和raw_input()的区别？</h3><p>两个都是接受输入的函数，input()接受的是一个合法的表达式，而raw_input()输入的数据都为字符串类型。</p><h3 id="2-函数式编程"><a href="#2-函数式编程" class="headerlink" title="2.函数式编程"></a>2.函数式编程</h3><p>函数式编程就是一种抽象程度很高的编程范式，纯粹的函数式编程语言编写的函数没有变量，因此，任意一个函数，只要输入是确定的，输出就是确定的，这种纯函数我们称之为没有副作用。而允许使用变量的程序设计语言，由于函数内部的变量状态不确定，同样的输入，可能得到不同的输出，因此，这种函数是有副作用的。函数式编程的一个特点就是，允许把函数本身作为参数传入另一个函数，还允许返回一个函数！Python对函数式编程提供部分支持。由于Python允许使用变量，因此，Python不是纯函数式编程语言。</p><h3 id="3-Python内存管理和垃圾回收"><a href="#3-Python内存管理和垃圾回收" class="headerlink" title="3.Python内存管理和垃圾回收"></a>3.Python内存管理和垃圾回收</h3><p>当Python的某个对象的引用计数为0时，说明没有引用指向该对象，该对象就要成为被回收的对象了。例如，某个新建的对象被分配给某个应用，对象的引用计数为1。如果引用被删除，对象的引用计数为0，那么该对象就可以被垃圾回收了。如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [1, 2, 3]</span><br><span class="line">del a</span><br></pre></td></tr></table></figure></p><h3 id="4-Python深拷贝与浅拷贝"><a href="#4-Python深拷贝与浅拷贝" class="headerlink" title="4.Python深拷贝与浅拷贝"></a>4.Python深拷贝与浅拷贝</h3><p>一：利用切片操作和工厂方法list方法拷贝就叫浅拷贝，只是拷贝了最外围的对象本身，内部的元素都只是拷贝了一个引用而已。<br>二：利用copy中的deepcopy方法进行拷贝就叫做深拷贝，外围和内部元素都进行了拷贝对象本身，而不是引用。但是对于数字，字符串和其他原子类型对象等，没有被拷贝的说法，即便是用深拷贝，查看id的话也是一样的，如果对其重新赋值，也只是新创建一个对象，替换掉旧的而已。</p><h3 id="5-Python字符串反转or列表反转"><a href="#5-Python字符串反转or列表反转" class="headerlink" title="5.Python字符串反转or列表反转"></a>5.Python字符串反转or列表反转</h3><p>python内置了丰富的操作字符串的函数。下面就以s = ‘abc’为例，介绍几个常用的字符串操作函数。<br>一、列表转换成字符串<br>a = list(s) b = ‘’.join(a)<br>二、字符串反转<br>1.a = list(s) a.reverse() s = ‘’.join(a)<br>2.s = s[::-1]<br>三、分隔字符串<br>a.split() #括号里添加参数，如’#‘表示字符串以‘#’分开<br>面试题<br>a = ‘i am superman’将这个字符串按照每个单词反转输出，即a = ‘superman am i’<br>x = a.split(‘ ‘)<br>y = x[::-1]<br>z = ‘ ‘.join(y)<br>ps:这是我亲身经历过的题，很遗憾我是用最最原始的方法来做的，f*k，让面试官感到我不是一个接地气的pythoner</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="1-input-和raw-input-的区别？"><a href="#1-input-和raw-input-的区别？" class="headerlink" title="1.input()和raw_input()的区别？"></a>1.input()和raw_input()的区别？</h3><p>两个都是接受输入的函数，input()接受的是一个合法的表达式，而raw_input()输入的数据都为字符串类型。</p><h3 id="2-函数式编程"><a href="#2-函数式编程" class="headerlink" title="2.函数式编程"></a>2.函数式编程</h3><p>函数式编程就是一种抽象程度很高的编程范式，纯粹的函数式编程语言编写的函数没有变量，因此，任意一个函数，只要输入是确定的，输出就是确定的，这种纯函数我们称之为没有副作用。而允许使用变量的程序设计语言，由于函数内部的变量状态不确定，同样的输入，可能得到不同的输出，因此，这种函数是有副作用的。函数式编程的一个特点就是，允许把函数本身作为参数传入另一个函数，还允许返回一个函数！Python对函数式编程提供部分支持。由于Python允许使用变量，因此，Python不是纯函数式编程语言。</p><h3 id="3-Python内存管理和垃圾回收"><a href="#3-Python内存管理和垃圾回收" class="headerlink" title="3.Python内存管理和垃圾回收"></a>3.Python内存管理和垃圾回收</h3><p>当Python的某个对象的引用计数为0时，说明没有引用指向该对象，该对象就要成为被回收的对象了。例如，某个新建的对象被分配给某个应用，对象的引用计数为1。如果引用被删除，对象的引用计数为0，那么该对象就可以被垃圾回收了。如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [1, 2, 3]</span><br><span class="line">del a</span><br></pre></td></tr></table></figure></p><h3 id="4-Python深拷贝与浅拷贝"><a href="#4-Python深拷贝与浅拷贝" class="headerlink" title="4.Python深拷贝与浅拷贝"></a>4.Python深拷贝与浅拷贝</h3><p>Python是一门面向对象语言。任何在Python中创建的变量，最后都指向一个对象。指向这个对象的其实是一个引用。如果对于这个对象进行复制，一般只是增加了一个引用指向这个对象，没有复制对象本身。如果要复制对象的话，就涉及Python深拷贝的操作。<br>一、利用切片操作和工厂方法list方法拷贝就叫浅拷贝，只是拷贝了最外围的对象本身，内部的元素都只是拷贝了一个引用而已。<br>二、利用copy中的deepcopy方法进行拷贝就叫做深拷贝，外围和内部元素都进行了拷贝对象本身，而不是引用。但是对于数字，字符串和其他原子类型对象等，没有被拷贝的说法，即便是用深拷贝，查看id的话也是一样的，如果对其重新赋值，也只是新创建一个对象，替换掉旧的而已。</p><h3 id="5-Python字符串反转or列表反转"><a href="#5-Python字符串反转or列表反转" class="headerlink" title="5.Python字符串反转or列表反转"></a>5.Python字符串反转or列表反转</h3><p>python内置了丰富的操作字符串的函数。下面就以s = ‘abc’为例，介绍几个常用的字符串操作函数。<br>一、列表转换成字符串<br>a = list(s) b = ‘’.join(a)<br>二、字符串反转<br>1.a = list(s) a.reverse() s = ‘’.join(a)<br>2.s = s[::-1]<br>三、分隔字符串<br>a.split() #括号里添加参数，如’#‘表示字符串以‘#’分开<br>面试题<br>a = ‘i am superman’将这个字符串按照每个单词反转输出，即a = ‘superman am i’<br>x = a.split(‘ ‘)<br>y = x[::-1]<br>z = ‘ ‘.join(y)<br>ps:这是我亲身经历过的题，很遗憾我是用最最原始的方法来做的，f*k，让面试官感到我不是一个接地气的pythoner</p>]]></content>
     
     <summary type="html">
     
